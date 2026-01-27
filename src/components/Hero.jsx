@@ -15,7 +15,7 @@ function Hero() {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center px-4 md:px-8 py-20 md:py-32 overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-start px-4 md:px-8 pt-32 md:pt-40 pb-12 overflow-hidden bg-gradient-to-b from-gray-50 to-white">
       
       {/* Decorative Icons - Floating around */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -44,28 +44,20 @@ function Hero() {
         </p>
 
         {/* Main Headline */}
-        <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight animate-fadeInUp animate-delay-200">
-          I enjoy <span className="text-purple-600">designing</span> and
-          <br />
-          <span className="text-purple-600">creating</span> for the web.
+        <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 animate-fadeInUp animate-delay-200">
+          <div className="mb-4 md:mb-5">
+            I enjoy <span className="text-purple-600">designing</span> and
+          </div>
+          <div>
+            <span className="text-purple-600">creating</span> for the web.
+          </div>
         </h1>
 
-        {/* Subtitle */}
-        <p className="text-base md:text-lg lg:text-xl text-gray-600 mb-8 max-w-2xl mx-auto animate-fadeInUp animate-delay-300">
-          Prarinporn Chookaew - UX/UI Designer passionate about crafting beautiful and functional digital experiences.
-        </p>
-
-        {/* Available Badge */}
+        
         
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fadeInUp animate-delay-500">
-          <a 
-            href="mailto:your-email@mail.com" 
-            className="bg-[#8B5CF6] text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-sm md:text-base font-semibold hover:bg-purple-700 transition-all duration-300 hover:scale-105 transform uppercase tracking-wider shadow-lg hover:shadow-xl"
-          >
-            Tell me more
-          </a>
           
           <button 
             onClick={handleDownloadCV}
