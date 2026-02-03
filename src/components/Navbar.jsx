@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import cvFile from '../assets/Prarinporn_Chookaew_CV.pdf'
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -16,6 +17,15 @@ function Navbar() {
     setIsMobileMenuOpen(false)
   }
 
+  const handleDownloadCV = () => {
+    const link = document.createElement('a')
+    link.href = cvFile
+    link.download = 'Prarinporn_Chookaew_CV.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
       isScrolled ? 'glass-navbar py-4' : 'bg-transparent py-4 md:py-6'
@@ -30,13 +40,13 @@ function Navbar() {
           <a href="#experience" className="text-gray-700 hover:text-[#8B5CF6] transition">Experiences</a>
         </div>
 
-        {/* Desktop Contact Button */}
-        <a 
-          href="mailto:your-email@mail.com" 
+        {/* Desktop Download CV Button */}
+        <button 
+          onClick={handleDownloadCV}
           className="hidden md:block bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition"
         >
-          Contact Us
-        </a>
+          Download CV
+        </button>
 
         {/* Mobile Menu Button */}
         <button 
@@ -79,12 +89,15 @@ function Navbar() {
             >
               Experiences
             </a>
-            <a 
-              href="mailto:your-email@mail.com" 
-              className="block bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition text-center"
+            <button 
+              onClick={() => {
+                handleDownloadCV()
+                handleLinkClick()
+              }}
+              className="block w-full bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition text-center"
             >
-              Contact Us
-            </a>
+              Download CV
+            </button>
           </div>
         </div>
       )}

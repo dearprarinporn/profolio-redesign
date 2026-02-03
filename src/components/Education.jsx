@@ -2,9 +2,7 @@ import React from 'react'
 import transcriptPDF from '../assets/Prarinporn_Chookaew_Transcript.pdf'
 import graduationPDF from '../assets/Prarinporn_Chookaew_ graduation.pdf'
 import psuLogo from '../assets/psuLogo.png'
-
-// Import Icons เพิ่มเติมเพื่อความสวยงาม
-import { FaUniversity, FaGraduationCap, FaMapMarkerAlt, FaFileDownload } from "react-icons/fa";
+import { FaGraduationCap, FaFileDownload, FaExternalLinkAlt } from "react-icons/fa";
 
 function Education() {
   const handleDownload = (fileUrl, fileName) => {
@@ -17,124 +15,86 @@ function Education() {
   }
 
   return (
-    <section className="py-20 md:py-32 px-4 md:px-8 bg-gray-50/50 relative overflow-hidden">
-      {/* Background Decoration (Optional) - วงกลมจางๆ ฉากหลัง */}
-      <div className="absolute top-20 left-0 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="absolute top-20 right-0 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+    <section className="py-12 md:py-20 px-4 md:px-8 bg-white relative overflow-hidden">
+      {/* Background Grid แบบเบาบาง */}
+      <div className="absolute inset-0 z-0 opacity-[0.03]" 
+           style={{ backgroundImage: `radial-gradient(#000 1px, transparent 1px)`, backgroundSize: '24px 24px' }}>
+      </div>
 
-      <div className="max-w-5xl mx-auto relative z-10">
-        
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-16 animate-fadeInUp">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-4 font-poppins">
-            Education
-          </h2>
-          <div className="h-1.5 w-24 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full opacity-80"></div>
+      <div className="max-w-4xl mx-auto relative z-10">
+        {/* Minimal Header */}
+        <div className="flex items-center gap-4 mb-10">
+          <h2 className="text-2xl font-bold tracking-tighter uppercase italic text-gray-900">Education</h2>
+          <div className="flex-1 h-[1px] bg-gray-100"></div>
+          <div className="flex gap-1">
+             <div className="w-2 h-2 rounded-full bg-purple-400"></div>
+             <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+          </div>
         </div>
-        
-        <div className="flex justify-center animate-fadeInUp">
-          {/* Education Card */}
-          <div className="group relative w-full max-w-5xl bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100">
-            
-            {/* Top Gradient Accent */}
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500"></div>
 
-            <div className="p-8 md:p-12">
-              <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
-                
-                {/* Left Side: Logo Area */}
-                <div className="flex-shrink-0 w-full lg:w-auto flex justify-center lg:block">
-                  <div className="relative group-hover:scale-105 transition-transform duration-500">
-                    {/* Glow Effect behind logo */}
-                    <div className="absolute inset-0 bg-purple-100 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <div className="relative w-36 h-36 md:w-44 md:h-44 flex items-center justify-center p-6 bg-white rounded-full shadow-lg border border-gray-50">
-                      <img src={psuLogo} alt="PSU Logo" className="w-full h-full object-contain" />
-                    </div>
+        {/* Compact Education Card */}
+        <div className="relative group">
+          {/* Bounding Box Effect */}
+          <div className="absolute -inset-2 border border-dashed border-purple-300 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          
+          <div className="relative bg-white border border-gray-100 rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-xl transition-all duration-500">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+              
+              {/* Logo Area - Small & Clean */}
+              <div className="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 bg-gray-50 rounded-xl p-3 border border-gray-50 group-hover:rotate-3 transition-transform">
+                <img src={psuLogo} alt="PSU" className="w-full h-full object-contain" />
+              </div>
+
+              {/* Info Area */}
+              <div className="flex-1 text-center md:text-left">
+                <div className="flex flex-col md:flex-row md:items-center gap-2 mb-2">
+                  <h3 className="text-xl font-bold text-gray-900">Bachelor of Science</h3>
+                  {/* Fresh Grad Badges */}
+                  <div className="flex justify-center md:justify-start gap-2">
+                    <span className="bg-purple-50 text-purple-600 text-[10px] font-bold px-2 py-0.5 rounded border border-purple-100 uppercase tracking-wider">
+                      Newly Graduated
+                    </span>
+                    <span className="bg-green-50 text-green-600 text-[10px] font-bold px-2 py-0.5 rounded border border-green-100 uppercase tracking-wider animate-pulse">
+                      Open to Work
+                    </span>
                   </div>
                 </div>
-                
-                {/* Right Side: Content Area */}
-                <div className="flex-1 w-full">
-                  
-                  {/* Title Section */}
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-6">
-                    <div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 font-poppins">
-                        Bachelor of Science
-                      </h3>
-                      <div className="flex items-center gap-2 text-xl font-medium text-purple-600">
-                        <FaGraduationCap className="text-xl" />
-                        <span>Computer Science</span>
-                      </div>
-                    </div>
 
-                    {/* Year Badge */}
-                    <div className="flex-shrink-0 self-start">
-                      <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-purple-50 text-purple-700 font-bold text-sm border border-purple-100 shadow-sm">
-                        <span>📅</span> 2018 - 2022
-                      </span>
-                    </div>
-                  </div>
-                  
-                  {/* University Details Grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 mb-8 p-6 bg-gray-50 rounded-2xl border border-gray-100">
-                    
-                    <div className="flex items-start gap-3">
-                      <div className="mt-1 p-2 bg-white rounded-lg shadow-sm text-purple-500">
-                        <FaUniversity />
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold">University</p>
-                        <p className="text-gray-800 font-medium">Prince of Songkla University (PSU)</p>
-                      </div>
-                    </div>
+                <p className="text-purple-600 font-medium flex items-center justify-center md:justify-start gap-2 mb-4">
+                  <FaGraduationCap /> Computer Science
+                </p>
 
-                    <div className="flex items-start gap-3">
-                      <div className="mt-1 p-2 bg-white rounded-lg shadow-sm text-pink-500">
-                        <FaMapMarkerAlt />
-                      </div>
-                      <div>
-                         <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold">Faculty</p>
-                         <p className="text-gray-800 font-medium">Faculty of Science</p>
-                      </div>
-                    </div>
-
-                    {/* GPA Section - Highlighted */}
-                    <div className="md:col-span-2 pt-2 border-t border-gray-200 mt-2">
-                       <div className="flex items-center justify-between">
-                          <p className="text-gray-600 font-medium">Cumulative GPA</p>
-                          <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-                            3.31
-                          </span>
-                       </div>
-                    </div>
-
-                  </div>
-                  
-                  {/* Buttons Section */}
-                  <div className="flex flex-wrap gap-4">
-                    <button
-                      onClick={() => handleDownload(transcriptPDF, 'Prarinporn_Chookaew_Transcript.pdf')}
-                      className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-xl transition-all duration-300 hover:bg-purple-600 hover:shadow-lg hover:-translate-y-1 font-medium group/btn"
-                    >
-                      <FaFileDownload className="group-hover/btn:animate-bounce" />
-                      <span>Transcript</span>
-                    </button>
-                    
-                    <button
-                      onClick={() => handleDownload(graduationPDF, 'Prarinporn_Chookaew_Graduation.pdf')}
-                      className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-3 bg-white text-gray-700 border border-gray-200 rounded-xl transition-all duration-300 hover:border-purple-500 hover:text-purple-600 hover:shadow-lg hover:-translate-y-1 font-medium"
-                    >
-                      <FaGraduationCap />
-                      <span>Certificate</span>
-                    </button>
-                  </div>
-
+                <div className="flex flex-wrap justify-center md:justify-start items-center gap-y-2 gap-x-6 text-sm text-gray-500">
+                  <span className="flex items-center gap-1.5 font-medium">
+                    📍 Prince of Songkla University
+                  </span>
+                  <span className="flex items-center gap-1.5 font-medium text-gray-400">
+                    🗓️ 2018 - 2022
+                  </span>
                 </div>
               </div>
+
+              {/* Actions Area - Minimal Buttons */}
+              <div className="flex md:flex-col gap-2 w-full md:w-auto border-t md:border-t-0 md:border-l border-gray-100 pt-4 md:pt-0 md:pl-6">
+                <button
+                  onClick={() => handleDownload(transcriptPDF, 'Transcript.pdf')}
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-widest bg-gray-900 text-white rounded-lg hover:bg-purple-600 transition-colors"
+                >
+                  <FaFileDownload size={12} /> Transcript
+                </button>
+                <button
+                  onClick={() => handleDownload(graduationPDF, 'Graduation.pdf')}
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-200 text-gray-600 rounded-lg hover:border-purple-400 hover:text-purple-600 transition-all"
+                >
+                  <FaExternalLinkAlt size={10} /> Certificate
+                </button>
+              </div>
+
             </div>
           </div>
+
+          {/* Figma-style small anchor point */}
+          <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-white border border-purple-500 opacity-0 group-hover:opacity-100"></div>
         </div>
       </div>
     </section>

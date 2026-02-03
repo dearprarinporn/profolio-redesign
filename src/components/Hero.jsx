@@ -1,8 +1,8 @@
 import cvFile from '../assets/Prarinporn_Chookaew_CV.pdf'
-import { 
-  FaPencilRuler, FaPalette, FaLightbulb, 
-  FaUserCheck, FaMagic, FaCode 
-} from 'react-icons/fa'
+import profileImage from '../assets/profile2.png'
+import uiImage from '../assets/ui.png'
+import ui2Image from '../assets/ui2.png'
+import cursorImage from '../assets/cursor.jpg'
 
 function Hero() {
   const handleDownloadCV = () => {
@@ -15,66 +15,66 @@ function Hero() {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col items-center justify-start px-4 md:px-8 pt-32 md:pt-40 pb-12 overflow-hidden bg-gradient-to-b from-gray-50 to-white">
-      
-      {/* Decorative Icons - Floating around */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Top Left */}
-        <FaPencilRuler className="absolute top-20 left-10 md:left-20 text-purple-300 text-4xl md:text-6xl opacity-40 animate-float" style={{ animationDelay: '0s' }} />
-        <FaMagic className="absolute top-32 left-32 md:left-48 text-pink-300 text-3xl md:text-5xl opacity-30 animate-float" style={{ animationDelay: '0.5s' }} />
-        
-        {/* Top Right */}
-        <FaPalette className="absolute top-24 right-16 md:right-32 text-blue-300 text-5xl md:text-7xl opacity-40 animate-float" style={{ animationDelay: '1s' }} />
-        <FaLightbulb className="absolute top-40 right-40 md:right-60 text-yellow-300 text-4xl md:text-6xl opacity-35 animate-float" style={{ animationDelay: '1.5s' }} />
-        
-        {/* Bottom Left */}
-        <FaUserCheck className="absolute bottom-32 left-20 md:left-40 text-green-300 text-4xl md:text-6xl opacity-40 animate-float" style={{ animationDelay: '2s' }} />
-        <FaCode className="absolute bottom-20 left-48 md:left-72 text-indigo-300 text-3xl md:text-5xl opacity-30 animate-float" style={{ animationDelay: '2.5s' }} />
-        
-        {/* Bottom Right */}
-        <FaPencilRuler className="absolute bottom-28 right-24 md:right-48 text-purple-300 text-5xl md:text-7xl opacity-35 animate-float" style={{ animationDelay: '3s' }} />
-        <FaMagic className="absolute bottom-40 right-12 md:right-24 text-pink-300 text-4xl md:text-6xl opacity-40 animate-float" style={{ animationDelay: '3.5s' }} />
+    <section id="home" className="relative flex flex-col items-center justify-center px-4 md:px-8 pt-32 md:pt-40 pb-8 md:pb-12 overflow-hidden bg-gradient-to-b from-gray-50 to-white" style={{ minHeight: '70vh' }}>
+
+      {/* Animated Cursor */}
+      <div className="absolute top-1/4 left-1/4 w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 z-30 animate-cursor-move pointer-events-none">
+        <img 
+          src={cursorImage} 
+          alt="Cursor" 
+          className="w-full h-full object-contain drop-shadow-lg"
+        />
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 text-center max-w-5xl mx-auto">
-        {/* Small Intro Text */}
-        <p className="text-ปส md:text-3xl text-gray-600 mb-4 animate-fadeInUp">
-          Hey, I'm <span className="font-semibold text-purple-600">Dear</span>
-        </p>
-
-        {/* Main Headline */}
-        <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 animate-fadeInUp animate-delay-200">
-          <div className="mb-4 md:mb-5">
-            I enjoy <span className="text-purple-600">designing</span> and
-          </div>
-          <div>
-            <span className="text-purple-600">creating</span> for the web.
-          </div>
-        </h1>
-
-        
-        
-
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fadeInUp animate-delay-500">
+      {/* Main Content - Grid Layout */}
+      <div className="relative z-10 max-w-6xl mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           
-          <button 
-            onClick={handleDownloadCV}
-            className="border-2 border-gray-300 text-gray-700 px-8 md:px-10 py-3 md:py-4 rounded-full text-sm md:text-base font-semibold hover:border-purple-600 hover:text-purple-600 transition-all duration-300 hover:scale-105 transform uppercase tracking-wider"
-          >
-            Download CV
-          </button>
-        </div>
-      </div>
+          {/* Left Column - Text Content */}
+          <div className="text-center lg:text-left">
+            {/* Small Intro Text */}
+            <p className="text-lg md:text-4xl text-gray-600 mb-4 animate-fadeInUp">
+              Hey, I'm <span className="font-semibold text-purple-600">Dear</span>
+            </p>
 
-      {/* Decorative Text Labels - Like "CODER" and "BRAYDEN" in the example */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block">
-        <div className="absolute bottom-32 left-10 text-6xl font-bold text-purple-200 opacity-20 rotate-[-15deg] animate-float" style={{ animationDelay: '1s' }}>
-          DESIGNER
-        </div>
-        <div className="absolute bottom-40 right-16 text-7xl font-bold text-pink-200 opacity-20 rotate-[10deg] animate-float" style={{ animationDelay: '2s' }}>
-          CREATIVE
+            {/* Main Headline */}
+            <h1 className="text-3xl md:text-5xl lg:text-8xl font-semibold mb-6 animate-fadeInUp animate-delay-200">
+              <div className="mb-2">
+                UX/UI <span className="text-purple-600">Designer</span> 
+              </div>
+              
+            </h1>
+
+            {/* Action Button */}
+            
+          </div>
+
+          {/* Right Column - Profile Image with UI Overlay */}
+          <div className="flex justify-center lg:justify-end animate-fadeInUp animate-delay-400">
+            <div className="relative">
+              {/* Main Profile Image */}
+              <img 
+                src={profileImage} 
+                alt="Profile" 
+                className="w-64 md:w-80 lg:w-96 h-auto relative z-10"
+              />
+              
+              {/* UI Overlay Image with Float Animation - Bottom Right */}
+              <img 
+                src={uiImage} 
+                alt="UI Design" 
+                className="absolute bottom-0 -right-8 md:-right-12 w-32 md:w-40 lg:w-48 h-auto z-20 animate-float-horizontal drop-shadow-2xl"
+              />
+
+              {/* UI2 Overlay Image - Top Left with Animation */}
+              <img 
+                src={ui2Image} 
+                alt="UI Design 2" 
+                className="absolute top-12 -left-8 md:top-16 md:-left-12 w-24 md:w-32 lg:w-40 h-auto z-20 animate-float-vertical drop-shadow-2xl"
+              />
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

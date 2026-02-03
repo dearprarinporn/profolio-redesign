@@ -204,6 +204,132 @@ img {
   animation: scroll 20s linear infinite;
 }
 
+/* Scrolling Left Animation for Tools */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-left {
+  animation: scrollLeft 5s linear infinite;
+  will-change: transform;
+}
+
+/* Seamless Scrolling Animation */
+@keyframes scrollSeamless {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-270px * 3)); /* 3 items * (264px width + 24px gap) */
+  }
+}
+
+.animate-scroll-seamless {
+  animation: scrollSeamless 10s linear infinite;
+  will-change: transform;
+}
+
+/* Float Animation - Slow and Smooth */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(-5px);
+  }
+  75% {
+    transform: translateY(-15px) translateX(3px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Float Horizontal Animation - Left to Right */
+@keyframes floatHorizontal {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+.animate-float-horizontal {
+  animation: floatHorizontal 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Float Vertical Animation - Up and Down */
+@keyframes floatVertical {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float-vertical {
+  animation: floatVertical 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Cursor Movement Animation - Simulating Mouse Movement */
+@keyframes cursorMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(120px, 30px);
+  }
+  20% {
+    transform: translate(240px, -15px);
+  }
+  30% {
+    transform: translate(320px, 45px);
+  }
+  40% {
+    transform: translate(280px, 75px);
+  }
+  50% {
+    transform: translate(180px, 60px);
+  }
+  60% {
+    transform: translate(80px, 80px);
+  }
+  70% {
+    transform: translate(40px, 40px);
+  }
+  80% {
+    transform: translate(160px, 10px);
+  }
+  90% {
+    transform: translate(260px, -25px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.animate-cursor-move {
+  animation: cursorMove 15s ease-in-out infinite;
+  will-change: transform;
+}
+
+
+
+
 
 /* Smooth scrolling improvements */
 @supports (scrollbar-width: thin) {
