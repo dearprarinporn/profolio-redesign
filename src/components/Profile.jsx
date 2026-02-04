@@ -1,75 +1,120 @@
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
-import profileImage from '../assets/profile.png'
-import backgroundImage from '../assets/projectBlackground.jpg'
+import { useState, useEffect } from 'react'
+import profileNew from '../assets/ProfileNew.png'
+import profileHover from '../assets/ProfileHover.png'
+import psuLogo from '../assets/psuLogo.png'
 
-function Profile() {
-  const personalInfo = {
-    name: 'Prarinporn Chookaew',
-    nickname: 'Dear',
-    title: 'UX/UI Designer & Frontend Developer',
-    email: 'prarinporn.c@gmail.com', // อ้างอิงจากข้อมูลผู้ใช้
-    phone: '086-959-4159', // อ้างอิงจากข้อมูลผู้ใช้
-    location: 'Hat Yai, Songkhla', // อ้างอิงจากข้อมูลผู้ใช้
-    bio: 'Fresh graduate Computer Science student from PSU with a passion for crafting user-centered digital experiences.', // สรุปจากประวัติ
-    linkedin: 'https://linkedin.com/in/prarinporn',
-    github: 'https://github.com/prarinporn'
-  }
+function About() {
+  const [isHovering, setIsHovering] = useState(false)
+  const [text, setText] = useState('')
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [loopNum, setLoopNum] = useState(0)
+  const [typingSpeed, setTypingSpeed] = useState(150)
+
+  const words = ['UXUI Designer', 'Frontend Developer']
+
+  useEffect(() => {
+    const handleType = () => {
+      const i = loopNum % words.length
+      const fullText = words[i]
+
+      setText(
+        isDeleting
+          ? fullText.substring(0, text.length - 1)
+          : fullText.substring(0, text.length + 1)
+      )
+
+      setTypingSpeed(isDeleting ? 50 : 150)
+
+      if (!isDeleting && text === fullText) {
+        setTimeout(() => setIsDeleting(true), 2000)
+      } else if (isDeleting && text === '') {
+        setIsDeleting(false)
+        setLoopNum(loopNum + 1)
+      }
+    }
+
+    const timer = setTimeout(handleType, typingSpeed)
+    return () => clearTimeout(timer)
+  }, [text, isDeleting, loopNum, typingSpeed, words])
 
   return (
-    <section id="about" className="py-20 md:py-32 px-4 md:px-8 bg-white relative overflow-hidden font-poppins">
-      {/* Background Decor - Grid แบบโปรแกรมออกแบบ */}
-      <div className="absolute inset-0 z-0 opacity-[0.03]" 
-           style={{ backgroundImage: `radial-gradient(#000 1px, transparent 1px)`, backgroundSize: '32px 32px' }}>
-      </div>
+    <section id="about" className="py-4 md:py-6 px-4 md:px-8 bg-gradient-to-b from-white to-purple-50/20 relative overflow-hidden">
+      
+      <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-3">
+            About <span className="text-purple-600">Me</span>
+          </h2>
+          <p className="text-gray-500 font-light text-sm md:text-base">
+            My technical proficiency and design workflow
+          </p>
+        </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Hero Image Section - ปรับให้เหมือนงาน Collage */}
-        <div className="relative mb-24 animate-fadeInUp">
-          {/* Main Background Card */}
-          <div className="relative h-[350px] md:h-[450px] rounded-[2.5rem] overflow-hidden group">
-            <img 
-              src={backgroundImage} 
-              alt="Background" 
-              className="w-full h-full object-cover grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-600/90 to-blue-500/80 mix-blend-multiply"></div>
-            
-            {/* Big Name Overlay - Ghost Text */}
-            <div className="absolute inset-0 flex items-center justify-start px-8 md:px-12 pointer-events-none">
-              <h1 className="text-6xl md:text-[8rem] lg:text-[10rem] font-black text-white/10 leading-none uppercase italic select-none">
-                PRARINPORN<br />CHOOKAEW
-              </h1>
-            </div>
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-100/30 rounded-full blur-3xl -z-10"></div>
 
-            {/* Content Inside Background Card */}
-            <div className="absolute bottom-10 left-10 hidden md:block max-w-sm">
-                <p className="text-white/80 text-sm font-medium leading-relaxed italic">
-                    "{personalInfo.bio}"
-                </p>
-            </div>
-          </div>
-
-          {/* Profile Image - ขยายใหญ่และใช้ Shadow นุ่มๆ */}
-          <div className="absolute right-0 md:right-8 -top-16 md:-top-24 lg:-top-32 z-10">
-            <div className="relative group">
-               {/* Selection Frame รอบรูปโปรไฟล์ */}
-               <div className="absolute -inset-4 border-2 border-dashed border-white/30 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-               <img 
-                src={profileImage} 
-                alt={personalInfo.name}
-                className="w-56 md:w-80 lg:w-96 h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-transform duration-500 group-hover:scale-105"
+      <div className="max-w-7xl mx-auto px-8 md:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+          
+          {/* --- Left Column: Image --- */}
+          <div className="flex justify-center animate-fadeInLeft order-1 md:order-1">
+            <div 
+              className="w-[600px] h-[600px] cursor-pointer"
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+            >
+              <img 
+                src={isHovering ? profileHover : profileNew}
+                alt="Prarinporn Chookaew" 
+                className="w-full h-auto object-cover object-center transition-all duration-500" 
               />
             </div>
           </div>
+
+          {/* --- Right Column: Info --- */}
+          <div className="animate-fadeInRight order-2 md:order-2 -mt-16">
+            <div className="mb-8">
+              <h2 className="text-5xl md:text-6xl font-semibold text-gray-900 leading-tight font-poppins mb-6 whitespace-nowrap">
+                <span className="text-purple-600">{text}</span>
+                <span className="animate-pulse">|</span>
+              </h2>
+              <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 uppercase tracking-wide">
+                PRARINPORN CHOOKAEW
+              </h1>
+            </div>
+
+            {/* Divider Line */}
+            <div className="w-full h-1 bg-purple-600 mb-8"></div>
+
+            {/* Education Card */}
+            <div>
+              <div className="flex gap-1 items-center flex-wrap md:flex-nowrap">
+                
+                {/* Logo */}
+                <div className="w-32 h-32 flex items-center justify-center flex-shrink-0 ">
+                  <img src={psuLogo} alt="PSU Logo" className="w-full h-full object-contain " />
+                </div>
+
+                {/* Info */}
+                <div className="flex-1 min-w-[300px]">
+                  <h3 className="text-3xl font-semibold text-purple-600 mb-3">Computer Science</h3>
+                  <h4 className="text-xl font-semibold text-gray-900 mb-2">Bachelor of Science</h4>
+                  <p className="text-lg text-gray-900 font-medium">
+                    Prince of Songkla University
+                  </p>
+                </div>
+
+                {/* Year Badge */}
+                <div className="px-6 py-3 bg-purple-600 text-white text-base font-semibold rounded-full whitespace-nowrap flex-shrink-0">
+                  2022 - 2025
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-        </div>
-        
-
-
-
-
+      </div>
     </section>
   )
 }
 
-export default Profile
+export default About

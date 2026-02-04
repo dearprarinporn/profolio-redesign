@@ -36,17 +36,11 @@ function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8">
           <a href="#home" className="text-gray-700 hover:text-[#8B5CF6] transition">Home</a>
-          <a href="#projects" className="text-gray-700 hover:text-[#8B5CF6] transition">Works</a>
+          <a href="#about" className="text-gray-700 hover:text-[#8B5CF6] transition">About Me</a>
+          <a href="#skills" className="text-gray-700 hover:text-[#8B5CF6] transition">Skills</a>
+          <a href="#projects" className="text-gray-700 hover:text-[#8B5CF6] transition">Projects</a>
           <a href="#experience" className="text-gray-700 hover:text-[#8B5CF6] transition">Experiences</a>
         </div>
-
-        {/* Desktop Download CV Button */}
-        <button 
-          onClick={handleDownloadCV}
-          className="hidden md:block bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition"
-        >
-          Download CV
-        </button>
 
         {/* Mobile Menu Button */}
         <button 
@@ -76,6 +70,20 @@ function Navbar() {
               Home
             </a>
             <a 
+              href="#about" 
+              onClick={handleLinkClick}
+              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2"
+            >
+              About Me
+            </a>
+            <a 
+              href="#skills" 
+              onClick={handleLinkClick}
+              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2"
+            >
+              Skills
+            </a>
+            <a 
               href="#projects" 
               onClick={handleLinkClick}
               className="block text-gray-700 hover:text-[#8B5CF6] transition py-2"
@@ -89,15 +97,6 @@ function Navbar() {
             >
               Experiences
             </a>
-            <button 
-              onClick={() => {
-                handleDownloadCV()
-                handleLinkClick()
-              }}
-              className="block w-full bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition text-center"
-            >
-              Download CV
-            </button>
           </div>
         </div>
       )}

@@ -390,6 +390,7 @@ img {
   contain: layout style paint;
 }
 
+
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -399,4 +400,5 @@ img {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
 }

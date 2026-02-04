@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Profile from './components/Profile'
@@ -7,19 +8,30 @@ import Experience from './components/Experience'
 import ContactCTA from './components/ContactCTA'
 import Footer from './components/Footer'
 import Education from './components/Education'
+import ProjectsPage from './pages/ProjectsPage'
 
 function App() {
   return (
-    <div className="bg-white text-gray-900">
-      <Navbar />
-      <Hero />
-      <Projects />
-      <Skills />
-      <Experience />
-      <Education />
-      <ContactCTA />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        {/* Home Page */}
+        <Route path="/" element={
+          <div className="bg-white text-gray-900">
+            <Navbar />
+            <Hero />
+            <Projects />
+            <Profile />
+            <Skills />
+            <Experience />
+            <ContactCTA />
+            <Footer />
+          </div>
+        } />
+        
+        {/* Projects Page */}
+        <Route path="/projects" element={<ProjectsPage />} />
+      </Routes>
+    </Router>
   )
 }
 

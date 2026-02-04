@@ -21,8 +21,8 @@ function ProjectCard({ title, year, image, onClick }) {
       <div className="px-3 pb-2">
         <div className="flex justify-between items-end mb-4">
           <div className="space-y-1">
-            <p className="text-purple-600 text-sm font-bold tracking-widest uppercase">{year}</p>
-            <h3 className="text-2xl font-bold text-gray-900 tracking-tight group-hover:text-purple-600 transition-colors duration-300">
+            <p className="text-purple-600 text-sm font-semibold tracking-widest uppercase">{year}</p>
+            <h3 className="text-2xl font-semibold text-gray-900 tracking-tight group-hover:text-purple-600 transition-colors duration-300">
               {title}
             </h3>
           </div>
