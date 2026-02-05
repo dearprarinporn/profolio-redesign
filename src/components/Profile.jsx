@@ -83,7 +83,7 @@ function About() {
             </div>
 
             {/* Divider Line */}
-            <div className="w-full h-1 bg-purple-600 mb-8"></div>
+            <div className="w-full h-0.5 bg-gradient-to-r from-purple-400 to-purple-600 mb-8"></div>
 
             {/* Education Card */}
             <div>

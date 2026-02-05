@@ -23,7 +23,6 @@ function App() {
             <Profile />
             <Skills />
             <Experience />
-            <ContactCTA />
             <Footer />
           </div>
         } />

@@ -45,9 +45,9 @@ function Experience() {
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   {/* Header */}
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-3 mb-5">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-3 mb-2">
                     <div className="flex-1">
-                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                      <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
                         {exp.position}
                       </h3>
                       <p className="text-base md:text-lg font-semibold text-purple-600">
