@@ -136,4 +136,13 @@ export const projectsData = [
       `${CLOUDINARY_URL}/Desktop_-_1_czapv0.webp`,
     ]
   },
+  {
+  id: 9,
+  title: 'New Project',
+  year: '2025',
+  type: 'design',
+  status: 'in-progress',  // เพิ่มบรรทัดนี้
+  image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
+  tags: ['React', 'UI/UX']
+  }
 ]

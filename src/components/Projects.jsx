@@ -48,6 +48,7 @@ function Projects() {
                   image={project.image}
                   tags={project.tags}
                   type={project.type}
+                  status={project.status}
                   githubUrl={project.githubUrl}
                   onClick={() => handleProjectClick(project)}
                 />
