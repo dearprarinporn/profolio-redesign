@@ -27,6 +27,10 @@ function ProjectsPage() {
     }, 300)
   }
 
+  // Separate projects by type
+  const designProjects = projectsData.filter(project => project.type === 'design')
+  const devProjects = projectsData.filter(project => project.type === 'development')
+
   return (
     <div className="bg-white text-gray-900 min-h-screen">
       <Navbar />
@@ -50,9 +54,16 @@ function ProjectsPage() {
             </Link>
           </div>
 
-          {/* All Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {projectsData.map((project, index) => (
+          {/* Design Projects Section */}
+          <div className="mb-12 flex items-center gap-4">
+            <h2 className="text-2xl md:text-3xl font-normal text-gray-900">
+              UX/UI <span className="text-purple-600">Project</span>
+            </h2>
+            <div className="flex-1 h-px bg-purple-300"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-20">
+            {designProjects.map((project, index) => (
               <div 
                 key={project.id} 
                 className="animate-fadeInUp"
@@ -63,6 +74,36 @@ function ProjectsPage() {
                   year={project.year}
                   image={project.image}
                   tags={project.tags}
+                  type={project.type}
+                  githubUrl={project.githubUrl}
+                  onClick={() => handleProjectClick(project)}
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Development Projects Section */}
+          <div className="mb-12 flex items-center gap-4">
+            <h2 className="text-2xl md:text-3xl font-normal text-gray-900">
+              <span className="text-purple-600">Development Project</span>
+            </h2>
+            <div className="flex-1 h-px bg-purple-300"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {devProjects.map((project, index) => (
+              <div 
+                key={project.id} 
+                className="animate-fadeInUp"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <ProjectCard 
+                  title={project.title} 
+                  year={project.year}
+                  image={project.image}
+                  tags={project.tags}
+                  type={project.type}
+                  githubUrl={project.githubUrl}
                   onClick={() => handleProjectClick(project)}
                 />
               </div>
