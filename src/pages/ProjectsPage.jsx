@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import ProjectCard from '../components/ProjectCard'
@@ -9,6 +9,11 @@ import { projectsData } from '../data/projectsData'
 function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [])
 
   const handleProjectClick = (project) => {
     setSelectedProject(project)
@@ -57,6 +62,7 @@ function ProjectsPage() {
                   title={project.title} 
                   year={project.year}
                   image={project.image}
+                  tags={project.tags}
                   onClick={() => handleProjectClick(project)}
                 />
               </div>

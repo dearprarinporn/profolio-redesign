@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import cvFile from '../assets/Prarinporn_Chookaew_CV.pdf'
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -17,30 +16,29 @@ function Navbar() {
     setIsMobileMenuOpen(false)
   }
 
-  const handleDownloadCV = () => {
-    const link = document.createElement('a')
-    link.href = cvFile
-    link.download = 'Prarinporn_Chookaew_CV.pdf'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }
-
   return (
     <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
       isScrolled ? 'glass-navbar py-4' : 'bg-transparent py-4 md:py-6'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center relative">
         <div className="text-xl md:text-2xl font-bold text-gray-800">Portfolio</div>
         
-        {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8">
+        {/* Desktop Menu - Center */}
+        <div className="hidden md:flex gap-8 absolute left-1/2 transform -translate-x-1/2">
           <a href="#home" className="text-gray-700 hover:text-[#8B5CF6] transition">Home</a>
-          <a href="#about" className="text-gray-700 hover:text-[#8B5CF6] transition">About Me</a>
-          <a href="#skills" className="text-gray-700 hover:text-[#8B5CF6] transition">Skills</a>
           <a href="#projects" className="text-gray-700 hover:text-[#8B5CF6] transition">Projects</a>
+          <a href="#about" className="text-gray-700 hover:text-[#8B5CF6] transition">About Me</a>
           <a href="#experience" className="text-gray-700 hover:text-[#8B5CF6] transition">Experiences</a>
+          <a href="#skills" className="text-gray-700 hover:text-[#8B5CF6] transition">Skills</a>
         </div>
+
+        {/* Desktop Contact Me Button */}
+        <a 
+          href="#footer"
+          className="hidden md:block bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition"
+        >
+          Contact Me
+        </a>
 
         {/* Mobile Menu Button */}
         <button 
@@ -70,11 +68,25 @@ function Navbar() {
               Home
             </a>
             <a 
+              href="#projects" 
+              onClick={handleLinkClick}
+              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2"
+            >
+              Projects
+            </a>
+            <a 
               href="#about" 
               onClick={handleLinkClick}
               className="block text-gray-700 hover:text-[#8B5CF6] transition py-2"
             >
               About Me
+            </a>
+            <a 
+              href="#experience" 
+              onClick={handleLinkClick}
+              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2"
+            >
+              Experiences
             </a>
             <a 
               href="#skills" 
@@ -84,18 +96,11 @@ function Navbar() {
               Skills
             </a>
             <a 
-              href="#projects" 
+              href="#footer"
               onClick={handleLinkClick}
-              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2"
+              className="block w-full bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition text-center"
             >
-              Projects
-            </a>
-            <a 
-              href="#experience" 
-              onClick={handleLinkClick}
-              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2"
-            >
-              Experiences
+              Contact Me
             </a>
           </div>
         </div>

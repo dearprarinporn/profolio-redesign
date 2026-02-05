@@ -1,14 +1,21 @@
+import React from 'react'
+// import Icon จาก react-icons ถ้ายังไม่ได้ลงให้ใช้ svg เดิมในโค้ดเก่าได้ครับ
+// แนะนำให้ลง npm install react-icons ก่อนเพื่อความสะดวก
+import { FaGoogleDrive } from "react-icons/fa"; 
+
 function Footer() {
+  const driveLink = "#"; // ใส่ลิงก์ Google Drive ของคุณตรงนี้
+
   return (
-    <footer className="relative bg-white text-gray-900">
-      {/* Scrolling Skills Banner */}
-      <div className="relative bg-gradient-to-r from-purple-50 via-purple-100 to-purple-50 py-5 md:py-7 overflow-hidden border-y border-purple-200">
-        {/* Fade overlay on edges */}
+    <footer id="footer" className="relative bg-white text-gray-900 font-poppins">
+      
+      {/* --- Scrolling Skills Banner (คงไว้ตามเดิม) --- */}
+      <div className="relative bg-gradient-to-r from-purple-50 via-purple-100 to-purple-50 py-3 md:py-4 overflow-hidden border-y border-purple-200">
         <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-purple-50 to-transparent z-10"></div>
         <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-purple-50 to-transparent z-10"></div>
         
         <div className="flex items-center gap-8 md:gap-12 animate-scroll whitespace-nowrap">
-          {/* First set */}
+          {/* ... (Skill items เดิมของคุณ) ... */}
           <span className="text-purple-600 text-base md:text-xl font-medium">UX Design</span>
           <span className="text-purple-300">•</span>
           <span className="text-purple-600 text-base md:text-xl font-medium">App Design</span>
@@ -22,7 +29,6 @@ function Footer() {
           <span className="text-purple-600 text-base md:text-xl font-medium">Prototyping</span>
           <span className="text-purple-300">•</span>
           
-          {/* Second set - duplicate for seamless loop */}
           <span className="text-purple-600 text-base md:text-xl font-medium">UX Design</span>
           <span className="text-purple-300">•</span>
           <span className="text-purple-600 text-base md:text-xl font-medium">App Design</span>
@@ -38,21 +44,42 @@ function Footer() {
         </div>
       </div>
 
-      {/* Footer Content */}
+      {/* --- Footer Content --- */}
       <div className="py-12 md:py-16 px-4 md:px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          {/* Main Content */}
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8">
             
-            {/* About Section */}
-            <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold mb-4 text-purple-600">Prarinporn Chookaew</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                UX/UI Designer passionate about creating intuitive and beautiful digital experiences.
-              </p>
+            {/* 1. About Section + Documents Button */}
+            <div className="text-center md:text-left space-y-6">
+              <div>
+                <h3 className="text-xl font-bold mb-4 text-purple-600">Prarinporn Chookaew</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  UX/UI Designer passionate about creating intuitive and beautiful digital experiences.
+                </p>
+              </div>
+
+              {/* [NEW] Documents Folder Card - แทรกตรงนี้ครับ */}
+              <a 
+                href={driveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl hover:border-purple-300 hover:shadow-md transition-all group w-full md:w-auto text-left"
+              >
+                <div className="w-10 h-10 bg-gray-50 rounded-lg flex items-center justify-center group-hover:bg-purple-50 transition-colors flex-shrink-0">
+                   {/* ใช้ FaGoogleDrive หรือ SVG เดิมก็ได้ครับ */}
+                   <FaGoogleDrive className="text-xl text-[#1FA463]" />
+                </div>
+                <div className="flex-1 min-w-0">
+                   <p className="font-bold text-gray-900 text-sm group-hover:text-purple-700 transition-colors truncate">Career Documents</p>
+                   <p className="text-[10px] text-gray-500 truncate">Resume, Transcript, Certs</p>
+                </div>
+                <div className="text-gray-300 group-hover:text-purple-400 group-hover:translate-x-1 transition-all px-2">→</div>
+              </a>
+
             </div>
 
-            {/* Contact Info */}
+            {/* 2. Contact Info (คงไว้ตามเดิม) */}
             <div className="text-center md:text-left">
               <h4 className="text-lg font-semibold mb-4 text-gray-900">Contact</h4>
               <div className="space-y-3 text-sm">
@@ -60,7 +87,7 @@ function Footer() {
                   <svg className="w-5 h-5 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                   </svg>
-                  <span>prarinporn.ch@gmail.com</span>
+                  <span>prarinporn.c@gmail.com</span>
                 </a>
                 <a href="tel:+66869594159" className="flex items-center justify-center md:justify-start gap-2 text-gray-600 hover:text-purple-600 transition group">
                   <svg className="w-5 h-5 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,7 +105,7 @@ function Footer() {
               </div>
             </div>
 
-            {/* Social Links */}
+            {/* 3. Social Links (คงไว้ตามเดิม) */}
             <div className="text-center md:text-left">
               <h4 className="text-lg font-semibold mb-4 text-gray-900">Connect</h4>
               <div className="flex flex-col gap-3">
@@ -108,6 +135,7 @@ function Footer() {
                 </a>
               </div>
             </div>
+
           </div>
 
           {/* Divider */}

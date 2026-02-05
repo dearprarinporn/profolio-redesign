@@ -13,6 +13,7 @@ export const projectsData = [
     duration: '4 months',
     tools: 'Figma',
     category: 'Mobile Application',
+    tags: ['Mobile App' , 'UX/UI'],
     additionalImages: [
       `${CLOUDINARY_URL}/logo_x6xjtr.webp`,
       `${CLOUDINARY_URL}/1_krv2cm.webp`,
@@ -46,6 +47,7 @@ export const projectsData = [
     duration: '3 months',
     tools: 'Figma, Sketch, InVision',
     category: 'Mobile App Design',
+    tags: ['Mobile App', 'Web App', 'UX/UI'],
     additionalImages: [
       `${CLOUDINARY_URL}/rythmWave_lqo92f.webp`,
       `${CLOUDINARY_URL}/concept2_usupkx.webp`,
@@ -78,6 +80,7 @@ export const projectsData = [
     duration: '4 months',
     tools: 'Figma, Adobe XD, Figjam',
     category: 'Dashboard Design',
+    tags: ['Mobile App', 'Redesign', 'UX/UI'],
     additionalImages: [
       `${CLOUDINARY_URL}/MacBook_Pro_16__-_8_ydhmnm.webp`,
       `${CLOUDINARY_URL}/MacBook_Pro_16__-_47_vgvw2x.webp`,
@@ -104,6 +107,7 @@ export const projectsData = [
     duration: '4 months',
     tools: 'Figma, Adobe XD, Figjam',
     category: 'Dashboard Design',
+    tags: ['Redesign', 'UI/UX', 'Dashboard'],
     additionalImages: [
       `${CLOUDINARY_URL}/MacBook_Pro_16__-_66_ppocxc.webp`,
       `${CLOUDINARY_URL}/MacBook_Pro_16__-_69_a70umd.webp`,
@@ -122,6 +126,7 @@ export const projectsData = [
     duration: '4 months',
     tools: 'Figma, Adobe XD, Figjam',
     category: 'Dashboard Design',
+    tags: ['UX Research', 'Wireframe', 'Testing'],
     additionalImages: [
       `${CLOUDINARY_URL}/MacBook_Pro_16__-_61_jovcl3.webp`,
       `${CLOUDINARY_URL}/MacBook_Pro_16__-_64_srab4l.webp`,
@@ -133,11 +138,7 @@ export const projectsData = [
     title: 'Rapid Work',
     year: '2025',
     image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
-    description: 'Productivity tool for remote teams to collaborate efficiently.',
-    role: 'UX/UI Designer',
-    duration: '4 months',
-    tools: 'Figma, Adobe XD, Figjam',
-    category: 'Dashboard Design',
+    tags: ['Web App', 'UI Design', 'Productivity'],
     additionalImages: [
       `${CLOUDINARY_URL}/MacBook_Pro_16__-_112_x5qcnj.webp`,
       `${CLOUDINARY_URL}/MacBook_Pro_16__-_113_kgx9yo.webp`,
@@ -150,6 +151,22 @@ export const projectsData = [
       `${CLOUDINARY_URL}/MacBook_Pro_16__-_100_dmnvbn.webp`,
       `${CLOUDINARY_URL}/MacBook_Pro_16__-_122_wqineg.webp`,
       `${CLOUDINARY_URL}/MacBook_Pro_16__-_123_mdy7mb.webp`,
+      
+    ]
+  },
+  {
+    id: 7,
+    title: 'Landing Page',
+    year: '2025',
+    image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
+    description: 'Productivity tool for remote teams to collaborate efficiently.',
+    role: 'UX/UI Designer',
+    duration: '4 months',
+    tools: 'Figma, Adobe XD, Figjam',
+    category: 'Dashboard Design',
+    tags: ['Landing Page', 'Web Design', 'Marketing'],
+    additionalImages: [
+      `${CLOUDINARY_URL}/Desktop_-_1_czapv0.webp`,
       
     ]
   },

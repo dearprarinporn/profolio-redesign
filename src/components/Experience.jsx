@@ -27,7 +27,7 @@ function Experience() {
           {experienceData.map((exp, index) => (
             <div 
               key={exp.id} 
-              className="bg-white/80 backdrop-blur-sm border border-gray-100 rounded-3xl p-6 md:p-8 hover:shadow-2xl hover:shadow-purple-100/50 hover:border-purple-200 hover:-translate-y-1 transition-all duration-300 animate-fadeInUp group"
+              className="bg-white/80 backdrop-blur-sm border border-gray-100 rounded-3xl p-6 md:p-6 hover:shadow-xs hover:border-purple-200 hover:-translate-y-1 transition-all duration-300 animate-fadeInUp group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex flex-col md:flex-row gap-6 md:gap-8">
@@ -67,11 +67,12 @@ function Experience() {
                     </div>
                   </div>
 
-                  {/* Skills Tags */}
+                  {/* Skills Tags <h3 className="text-xl md:text-2xl font-medium text-gray-900 whitespace-nowrap">*/}              
+
                   {exp.tags && (
                     <div className="flex flex-wrap gap-2">
                       {exp.tags.map((tag, i) => (
-                        <span key={i} className="px-4 py-1.5 bg-gray-50/80 text-gray-600 rounded-xl text-xs md:text-sm font-medium border border-gray-200/50 hover:bg-purple-50 hover:text-purple-700 hover:border-purple-200 hover:shadow-sm transition-all duration-200">
+                        <span key={i} className="px-4 py-1.5 bg-gray-50/80 text-gray-500 rounded-xl text-xs md:text-sm font-normal border border-gray-200/50 hover:bg-purple-50 hover:text-purple-700 hover:border-purple-200 hover:shadow-sm transition-all duration-200">
                           {tag}
                         </span>
                       ))}

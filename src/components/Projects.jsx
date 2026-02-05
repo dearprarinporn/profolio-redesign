@@ -46,6 +46,7 @@ function Projects() {
                   title={project.title} 
                   year={project.year}
                   image={project.image}
+                  tags={project.tags}
                   onClick={() => handleProjectClick(project)}
                 />
               </div>

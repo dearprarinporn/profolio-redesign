@@ -1,4 +1,4 @@
-function ProjectCard({ title, year, image, onClick }) {
+function ProjectCard({ title, year, image, tags = [], onClick }) {
   return (
     <div 
       onClick={onClick}
@@ -34,9 +34,9 @@ function ProjectCard({ title, year, image, onClick }) {
           </div>
         </div>
         
-        {/* Tags - ปรับให้สี Soft ลงเพื่อไม่ให้แย่งจุดเด่น */}
+        {/* Tags - แสดง tags ที่แตกต่างกันในแต่ละการ์ด */}
         <div className="flex gap-2 flex-wrap">
-          {['UX Design', 'UI Design'].map((tag) => (
+          {tags.map((tag) => (
             <span key={tag} className="px-4 py-1.5 bg-gray-50 text-gray-500 rounded-full text-xs font-medium border border-gray-100 group-hover:border-purple-100 group-hover:bg-purple-50 group-hover:text-purple-600 transition-all duration-300">
               {tag}
             </span>

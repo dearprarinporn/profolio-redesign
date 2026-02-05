@@ -20,18 +20,18 @@ function Skills() {
 
   const uxSkills = [
     'User Research', 'Wireframing', 'Info Architecture', 
-    'Prototyping', 'Usability Testing', 'Design Thinking'
+    'Prototyping', 'Usability Testing', 'Design Thinking', 'Design System', ,'WCAG', 'Responsive Design'
   ];
 
   const devSkills = [
     'React', 'Angular', 'JavaScript', 'TypeScript', 
-    'Python', 'PHP', 'C', 'HTML', 'CSS', 'MySQL', 'Robot Framework'
+    'Python', 'PHP', 'C', 'HTML', 'CSS', 'MySQL', 'Robot Framework','Tailwind CSS'
   ];
 
   const allTools = Array(8).fill(designTools).flat();
 
   return (
-    <section className="-mt-8 md:-mt-12 pt-0 pb-8 md:pt-0 md:pb-12 px-4 md:px-8 bg-white font-poppins relative overflow-hidden">
+    <section id="skills" className="py-16 md:py-24 px-4 md:px-8 bg-white font-poppins relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         
         {/* 🟢 Header: คงเดิม */}
@@ -67,7 +67,7 @@ function Skills() {
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-4 mb-6 w-full justify-center md:justify-start">
               <h3 className="text-xl md:text-2xl font-medium text-gray-900 whitespace-nowrap">
-                User <span className="text-purple-600">Experience</span>
+                <span className="text-purple-600">UX/UI</span> Skill 
               </h3>
               <div className="flex-1 h-0.5 bg-gradient-to-r from-purple-400 to-purple-600"></div>
             </div>
