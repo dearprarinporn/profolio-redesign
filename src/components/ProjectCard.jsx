@@ -7,7 +7,7 @@ function ProjectCard({ title, year, image, tags = [], onClick, githubUrl, type, 
   return (
     <div 
       onClick={onClick}
-      className="group bg-white rounded-[2.5rem] p-4 border border-gray-200 shadow-sm hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 cursor-pointer overflow-hidden"
+      className="group bg-white rounded-[2.5rem] p-4 border border-gray-200 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_40px_rgba(168,85,247,0.15)] transition-all duration-500 cursor-pointer overflow-hidden"
     >
       {/* Image Container - เพิ่มมิติด้วย Inner Shadow */}
       <div className="relative aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden mb-6 bg-gray-50">

@@ -22,60 +22,88 @@ function Experience() {
             A journey through my professional career path
           </p>
         </div>
-        
-        <div className="space-y-5 md:space-y-6">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-16">
           {experienceData.map((exp, index) => (
-            <div 
-              key={exp.id} 
-              className="bg-white/80 backdrop-blur-sm border border-gray-100 rounded-3xl p-6 md:p-6 hover:shadow-xs hover:border-purple-200 hover:-translate-y-1 transition-all duration-300 animate-fadeInUp group"
+            <div
+              key={exp.id}
+              className="relative animate-fadeInUp"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-                {/* Logo */}
-                <div className="flex-shrink-0">
-                  <div className="w-20 h-20 md:w-28 md:h-28 bg-gradient-to-br from-gray-50 to-purple-50/30 rounded-2xl flex items-center justify-center p-4 border border-gray-100 group-hover:border-purple-300 group-hover:shadow-lg transition-all duration-300">
+              {/* Card with integrated logo at top */}
+              <div className="relative bg-white border border-gray-100/80 rounded-[2rem] shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_25px_rgba(0,0,0,0.12)] hover:border-purple-100 transition-all duration-300 group mt-12">
+                {/* Logo integrated into card - half outside */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  {/* Timeline Badge */}
+                  {exp.status === 'current' && (
+                    <div className="absolute -top-2 -right-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10 animate-pulse">
+                      Latest
+                    </div>
+                  )}
+                  <div className="w-24 h-24 bg-white rounded-3xl p-4 border border-gray-100 shadow-lg group-hover:shadow-xl transition-all duration-300">
                     {exp.image ? (
-                      <img src={exp.image} alt={`${exp.company} logo`} className="w-full h-full object-contain" />
+                      <img src={exp.image} alt={`${exp.company} logo`} className="w-full h-full object-contain rounded-2xl" />
                     ) : (
-                      <span className="text-3xl md:text-4xl">💼</span>
+                      <span className="text-4xl flex items-center justify-center h-full">💼</span>
                     )}
                   </div>
                 </div>
-                
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  {/* Header */}
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-3 mb-2">
-                    <div className="flex-1">
-                      <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
-                        {exp.position}
-                      </h3>
-                      <p className="text-base md:text-lg font-semibold text-purple-600">
-                        {exp.company}
-                      </p>
-                    </div>
-                    
-                    {/* Period Badge */}
-                    <div className="flex-shrink-0">
-                      <div className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-purple-50 to-purple-100/50 text-purple-700 rounded-full text-sm font-medium border border-purple-200/50 shadow-sm">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+
+                {/* Card Content */}
+                <div className="flex flex-col h-full relative z-10 p-6 pt-20 pb-6 min-h-[420px]">
+                  {/* Position Title - Centered */}
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors duration-300 leading-tight mb-2 text-center">
+                    {exp.position}
+                  </h3>
+
+                  {/* Type Badge - Centered */}
+                  <div className="mb-6 text-center">
+                    {exp.type === 'intern' ? (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-semibold border border-blue-100">
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
-                        <span className="whitespace-nowrap">{exp.period}</span>
-                        {exp.duration && <span className="text-purple-500">• {exp.duration}</span>}
-                      </div>
-                    </div>
+                        Internship
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-gradient-to-r from-purple-50 to-purple-100 text-purple-700 rounded-full text-xs font-semibold border border-purple-200">
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        Full-time
+                      </span>
+                    )}
                   </div>
 
-                  {/* Skills Tags <h3 className="text-xl md:text-2xl font-medium text-gray-900 whitespace-nowrap">*/}              
+                  {/* Spacer to push content down */}
+                  <div className="flex-grow"></div>
 
+                  {/* Company Name - Left Aligned */}
+                  <div className="flex items-center gap-2 mb-3">
+                    <svg className="w-4 h-4 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                    <span className="font-medium text-purple-600 text-sm">{exp.company}</span>
+                  </div>
+
+                  {/* Period - Left Aligned */}
+                  <div className="flex items-center gap-2 mb-6">
+                    <svg className="w-4 h-4 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span className="font-medium text-gray-600 text-sm">{exp.period}</span>
+                  </div>
+
+                  {/* Tags */}
                   {exp.tags && (
-                    <div className="flex flex-wrap gap-2">
-                      {exp.tags.map((tag, i) => (
-                        <span key={i} className="px-4 py-1.5 bg-gray-50/80 text-gray-500 rounded-xl text-xs md:text-sm font-normal border border-gray-200/50 hover:bg-purple-50 hover:text-purple-700 hover:border-purple-200 hover:shadow-sm transition-all duration-200">
-                          {tag}
-                        </span>
-                      ))}
+                    <div className="mt-auto w-full pt-6 border-t border-gray-100">
+                      <div className="flex flex-wrap gap-2">
+                        {exp.tags.map((tag, i) => (
+                          <span key={i} className="px-3 py-1.5 bg-gray-50 text-gray-500 rounded-lg text-xs font-medium border border-gray-100/50 hover:bg-purple-50 hover:text-purple-600 hover:border-purple-100/50 transition-all duration-300 group-hover:bg-white/50 group-hover:shadow-sm">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -83,7 +111,7 @@ function Experience() {
             </div>
           ))}
         </div>
-        
+
         {/* Download Button */}
         <div className="flex justify-center mt-16 animate-fadeInUp">
           <button
