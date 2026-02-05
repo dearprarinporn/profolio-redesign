@@ -57,10 +57,9 @@ function Projects() {
             <div className="flex justify-center">
               <Link
                 to="/projects"
-                className="group relative px-10 py-4 bg-gray-900 text-white rounded-full font-semibold overflow-hidden transition-all duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] active:scale-95 inline-block"
+                className="px-10 py-4 bg-gray-100 text-gray-700 rounded-full font-medium hover:bg-gray-200 transition-all duration-300 tracking-wider text-base inline-block"
               >
-                <span className="relative z-10">View All Projects</span>
-                <div className="absolute inset-0 bg-purple-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                View All Projects
               </Link>
             </div>
           )}

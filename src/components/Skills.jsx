@@ -31,7 +31,7 @@ function Skills() {
   const allTools = Array(8).fill(designTools).flat();
 
   return (
-    <section className="pt-16 pb-8 md:pt-24 md:pb-12 px-4 md:px-8 bg-white font-poppins relative overflow-hidden">
+    <section className="-mt-8 md:-mt-12 pt-0 pb-8 md:pt-0 md:pb-12 px-4 md:px-8 bg-white font-poppins relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         
         {/* 🟢 Header: คงเดิม */}

@@ -38,9 +38,9 @@ function About() {
   }, [text, isDeleting, loopNum, typingSpeed, words])
 
   return (
-    <section id="about" className="py-4 md:py-6 px-4 md:px-8 bg-gradient-to-b from-white to-purple-50/20 relative overflow-hidden">
+    <section id="about" className="py-2 md:py-4 px-4 md:px-8 bg-white relative overflow-hidden">
       
-      <div className="text-center mb-12 md:mb-16">
+      <div className="text-center mb-12 md:mb-6">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-3">
             Who is <span className="text-purple-600">Prarinporn?</span>
           </h2>
