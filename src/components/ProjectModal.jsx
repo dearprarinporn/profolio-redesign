@@ -70,7 +70,7 @@ function ProjectModal({ isOpen, onClose, project }) {
       <div 
         ref={modalContentRef}
         onClick={onClose}
-        className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/60 backdrop-blur-sm p-2 md:p-4 pt-16 md:pt-20"
+        className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/70 p-2 md:p-4 pt-16 md:pt-20"
       >
 
       {/* Modal Content */}

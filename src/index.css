@@ -8,7 +8,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
 
@@ -169,13 +168,12 @@ body {
 .animate-slideInRight,
 .animate-scaleIn {
   opacity: 0;
-  will-change: transform, opacity;
 }
 
 /* Optimize animations */
 @media (prefers-reduced-motion: no-preference) {
-  * {
-    scroll-behavior: smooth;
+  html {
+    scroll-behavior: auto;
   }
 }
 
@@ -216,7 +214,6 @@ img {
 
 .animate-scroll-left {
   animation: scrollLeft 5s linear infinite;
-  will-change: transform;
 }
 
 /* Seamless Scrolling Animation */
@@ -231,7 +228,6 @@ img {
 
 .animate-scroll-seamless {
   animation: scrollSeamless 10s linear infinite;
-  will-change: transform;
 }
 
 /* Float Animation - Slow and Smooth */
@@ -252,7 +248,6 @@ img {
 
 .animate-float-slow {
   animation: floatSlow 6s ease-in-out infinite;
-  will-change: transform;
 }
 
 /* Float Horizontal Animation - Left to Right */
@@ -267,7 +262,6 @@ img {
 
 .animate-float-horizontal {
   animation: floatHorizontal 4s ease-in-out infinite;
-  will-change: transform;
 }
 
 /* Float Vertical Animation - Up and Down */
@@ -282,7 +276,6 @@ img {
 
 .animate-float-vertical {
   animation: floatVertical 5s ease-in-out infinite;
-  will-change: transform;
 }
 
 /* Cursor Movement Animation - Simulating Mouse Movement */
@@ -324,7 +317,6 @@ img {
 
 .animate-cursor-move {
   animation: cursorMove 15s ease-in-out infinite;
-  will-change: transform;
 }
 
 
@@ -371,23 +363,11 @@ img {
 .animate-scaleIn {
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
-  perspective: 1000px;
-  will-change: transform, opacity;
-}
-
-/* Remove will-change after animation */
-.animate-fadeIn.animation-done,
-.animate-fadeInUp.animation-done,
-.animate-slideInLeft.animation-done,
-.animate-slideInRight.animation-done,
-.animate-scaleIn.animation-done {
-  will-change: auto;
 }
 
 /* Optimize images */
 img {
   content-visibility: auto;
-  contain: layout style paint;
 }
 
 

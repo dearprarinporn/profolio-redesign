@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react'
 import profileNew from '../assets/ProfileNew.png'
-import profileHover from '../assets/ProfileHover.png'
 import psuLogo from '../assets/psuLogo.png'
 
 function About() {
-  const [isHovering, setIsHovering] = useState(false)
   const [text, setText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
   const [loopNum, setLoopNum] = useState(0)
