@@ -4,10 +4,22 @@ function ProjectCard({ title, year, image, tags = [], onClick, githubUrl, type, 
     window.open(githubUrl, '_blank')
   }
 
+  const handleCardClick = () => {
+    // ถ้าเป็น in-progress ไม่ให้กดได้
+    if (status === 'in-progress') {
+      return
+    }
+    onClick()
+  }
+
   return (
     <div 
-      onClick={onClick}
-      className="group bg-white rounded-[2.5rem] p-4 border border-gray-200 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_40px_rgba(168,85,247,0.15)] transition-all duration-500 cursor-pointer overflow-hidden"
+      onClick={handleCardClick}
+      className={`group bg-white rounded-[2.5rem] p-4 border border-gray-200 shadow-[0_0_20px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden ${
+        status === 'in-progress' 
+          ? 'cursor-not-allowed opacity-75' 
+          : 'cursor-pointer hover:shadow-[0_0_40px_rgba(168,85,247,0.15)]'
+      }`}
     >
       {/* Image Container - เพิ่มมิติด้วย Inner Shadow */}
       <div className="relative aspect-[4/3] md:aspect-[5/4] rounded-[2rem] overflow-hidden mb-6 bg-gray-50">
@@ -15,11 +27,15 @@ function ProjectCard({ title, year, image, tags = [], onClick, githubUrl, type, 
           <img 
             src={image} 
             alt={title} 
-            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" 
+            className={`w-full h-full object-cover transition-transform duration-700 ease-out ${
+              status === 'in-progress' ? '' : 'group-hover:scale-110'
+            }`} 
           />
         )}
         {/* Subtle Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className={`absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent transition-opacity duration-500 ${
+          status === 'in-progress' ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'
+        }`}></div>
         
         {/* In Progress Badge */}
         {status === 'in-progress' && (
@@ -49,13 +65,21 @@ function ProjectCard({ title, year, image, tags = [], onClick, githubUrl, type, 
         <div className="flex justify-between items-end mb-4">
           <div className="space-y-1">
             <p className="text-purple-600 text-sm font-semibold tracking-widest uppercase">{year}</p>
-            <h3 className="text-2xl font-semibold text-gray-900 tracking-tight group-hover:text-purple-600 transition-colors duration-300">
+            <h3 className={`text-2xl font-semibold text-gray-900 tracking-tight transition-colors duration-300 ${
+              status === 'in-progress' ? '' : 'group-hover:text-purple-600'
+            }`}>
               {title}
             </h3>
           </div>
           {/* Arrow Icon - เพิ่มลูกเล่นเวลา Hover */}
-          <div className="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center -rotate-45 group-hover:rotate-0 group-hover:bg-purple-500 group-hover:border-purple-500 transition-all duration-500">
-             <svg className="w-5 h-5 text-gray-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className={`w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center transition-all duration-500 ${
+            status === 'in-progress' 
+              ? '-rotate-45 bg-gray-100' 
+              : '-rotate-45 group-hover:rotate-0 group-hover:bg-purple-500 group-hover:border-purple-500'
+          }`}>
+             <svg className={`w-5 h-5 transition-colors duration-500 ${
+               status === 'in-progress' ? 'text-gray-400' : 'text-gray-400 group-hover:text-white'
+             }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
              </svg>
           </div>
@@ -64,7 +88,11 @@ function ProjectCard({ title, year, image, tags = [], onClick, githubUrl, type, 
         {/* Tags - แสดง tags ที่แตกต่างกันในแต่ละการ์ด */}
         <div className="flex gap-2 flex-wrap">
           {tags.map((tag) => (
-            <span key={tag} className="px-4 py-1.5 bg-gray-50 text-gray-500 rounded-full text-xs font-medium border border-gray-100 group-hover:border-purple-100 group-hover:bg-purple-50 group-hover:text-purple-600 transition-all duration-300">
+            <span key={tag} className={`px-4 py-1.5 bg-gray-50 text-gray-500 rounded-full text-xs font-medium border border-gray-100 transition-all duration-300 ${
+              status === 'in-progress' 
+                ? '' 
+                : 'group-hover:border-purple-100 group-hover:bg-purple-50 group-hover:text-purple-600'
+            }`}>
               {tag}
             </span>
           ))}

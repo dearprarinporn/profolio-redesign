@@ -48,7 +48,7 @@ function Hero() {
             showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}>
             <div className="mb-4">I enjoy <span className="text-purple-600">designing</span> and</div>
-            <div><span className="text-purple-600">creating</span> for the web.</div>
+            <div><span className="text-purple-600">developing</span> digital experiences.</div>
           </h1>
 
           {/* Action Button */}

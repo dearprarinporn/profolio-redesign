@@ -1,14 +1,21 @@
 // CDN URLs from Cloudinary
 const CLOUDINARY_URL = 'https://res.cloudinary.com/dl1m5dwmb/image/upload/v1768671127'
+import uniqPF from '../assets/uniqPF.jpg'
+import RhyPF from '../assets/RhyPF.jpg'
+import PeepPF from '../assets/PeepPF.jpg'
+import RapPF from '../assets/RapPF.jpg'
+import LanPF from '../assets/LanPF.jpg'
 
-// Project data
+
+
+
 export const projectsData = [
   {
     id: 1,
     title: 'UniQ',
     year: '2025',
     type: 'design',
-    image: `${CLOUDINARY_URL}/concept_o9yi8b.webp`,
+    image: uniqPF,
     tags: ['Mobile App' , 'UX/UI'],
     additionalImages: [
       `${CLOUDINARY_URL}/logo_x6xjtr.webp`,
@@ -36,9 +43,9 @@ export const projectsData = [
   {
     id: 2,
     title: 'RythmWave',
-    year: '2025',
+    year: '2024',
     type: 'design',
-    image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
+    image: RhyPF,
     tags: ['Mobile App', 'Web App', 'UX/UI'],
     additionalImages: [
       `${CLOUDINARY_URL}/rythmWave_lqo92f.webp`,
@@ -67,7 +74,7 @@ export const projectsData = [
     title: 'Peep Share',
     year: '2025',
     type: 'design',
-    image: `${CLOUDINARY_URL}/concept_o9yi8b.webp`,
+    image: PeepPF,
     tags: ['Mobile App', 'Redesign', 'UX/UI'],
     additionalImages: [
       `${CLOUDINARY_URL}/MacBook_Pro_16__-_8_ydhmnm.webp`,
@@ -96,7 +103,7 @@ export const projectsData = [
     title: 'Rapid Work',
     year: '2025',
     type: 'design',
-    image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
+    image: RapPF,
     tags: ['Web App', 'UI Design', 'Productivity'],
     additionalImages: [
       `${CLOUDINARY_URL}/MacBook_Pro_16__-_112_x5qcnj.webp`,
@@ -116,18 +123,35 @@ export const projectsData = [
   {
     id: 7,
     title: 'Landing Page',
-    year: '2025',
+    year: '2024',
     type: 'design',
-    image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
-    tags: ['Web Design', 'UI'],
+    image: LanPF,
+    tags: ['Web Design', 'UI', 'Wireframe'],
     additionalImages: [
       `${CLOUDINARY_URL}/Desktop_-_1_czapv0.webp`,
     ]
   },
   {
-    id: 8,
+  id: 8,
+  title: 'Portfolio Website',
+  year: '2026',
+  type: 'development',
+  image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
+  tags: ['React', 'Tailwind CSS']
+  },
+  {
+  id: 9,
+  title: 'New Project',
+  year: '2025',
+  type: 'design',
+  status: 'in-progress',  
+  image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
+  tags: ['React', 'UI/UX']
+  },
+  {
+    id: 10,
     title: 'Bank Website Dev',
-    year: '2025',
+    year: '2023',
     type: 'development',
     githubUrl: 'https://github.com/yourusername/bank-website',
     image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
@@ -136,13 +160,4 @@ export const projectsData = [
       `${CLOUDINARY_URL}/Desktop_-_1_czapv0.webp`,
     ]
   },
-  {
-  id: 9,
-  title: 'New Project',
-  year: '2025',
-  type: 'design',
-  status: 'in-progress',  // เพิ่มบรรทัดนี้
-  image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
-  tags: ['React', 'UI/UX']
-  }
 ]
