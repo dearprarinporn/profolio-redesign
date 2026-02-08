@@ -5,6 +5,7 @@ import RhyPF from '../assets/RhyPF.jpg'
 import PeepPF from '../assets/PeepPF.jpg'
 import RapPF from '../assets/RapPF.jpg'
 import LanPF from '../assets/LanPF.jpg'
+import PortPF from '../assets/PortPF.jpg'
 
 
 
@@ -136,18 +137,19 @@ export const projectsData = [
   title: 'Portfolio Website',
   year: '2026',
   type: 'development',
-  image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
+  githubUrl: 'https://github.com/dearprarinporn/profolio-redesign',
+  image: PortPF,
   tags: ['React', 'Tailwind CSS']
   },
-  {
-  id: 9,
-  title: 'New Project',
-  year: '2025',
-  type: 'design',
-  status: 'in-progress',  
-  image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
-  tags: ['React', 'UI/UX']
-  },
+  // {
+  // id: 9,
+  // title: 'New Project',
+  // year: '2025',
+  // type: 'design',
+  // status: 'in-progress',  
+  // image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
+  // tags: ['React', 'UI/UX']
+  // },
   {
     id: 10,
     title: 'Bank Website Dev',
