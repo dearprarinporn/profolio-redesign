@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
+  
+  const isProjectsPage = location.pathname === '/projects'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +20,11 @@ function Navbar() {
   const handleLinkClick = (e, targetId) => {
     e.preventDefault()
     setIsMobileMenuOpen(false)
+    
+    if (isProjectsPage && targetId === 'home') {
+      navigate('/')
+      return
+    }
     
     const element = document.getElementById(targetId)
     if (element) {
@@ -31,18 +41,48 @@ function Navbar() {
         
         {/* Desktop Menu - Center */}
         <div className="hidden md:flex gap-8 absolute left-1/2 transform -translate-x-1/2">
-          <a href="#home" onClick={(e) => handleLinkClick(e, 'home')} className="text-gray-700 hover:text-[#8B5CF6] transition cursor-pointer">Home</a>
-          <a href="#projects" onClick={(e) => handleLinkClick(e, 'projects')} className="text-gray-700 hover:text-[#8B5CF6] transition cursor-pointer">Projects</a>
-          <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className="text-gray-700 hover:text-[#8B5CF6] transition cursor-pointer">About Me</a>
-          <a href="#skills" onClick={(e) => handleLinkClick(e, 'skills')} className="text-gray-700 hover:text-[#8B5CF6] transition cursor-pointer">Skills</a>
-          <a href="#experience" onClick={(e) => handleLinkClick(e, 'experience')} className="text-gray-700 hover:text-[#8B5CF6] transition cursor-pointer">Experiences</a>
+          <a 
+            href="#home" 
+            onClick={(e) => handleLinkClick(e, 'home')} 
+            className={`transition cursor-pointer ${isProjectsPage ? 'text-gray-700 hover:text-[#8B5CF6]' : 'text-gray-700 hover:text-[#8B5CF6]'}`}
+          >
+            Home
+          </a>
+          <a 
+            href="#projects" 
+            onClick={(e) => !isProjectsPage && handleLinkClick(e, 'projects')} 
+            className={`transition ${isProjectsPage ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer'}`}
+          >
+            Projects
+          </a>
+          <a 
+            href="#about" 
+            onClick={(e) => !isProjectsPage && handleLinkClick(e, 'about')} 
+            className={`transition ${isProjectsPage ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer'}`}
+          >
+            About Me
+          </a>
+          <a 
+            href="#skills" 
+            onClick={(e) => !isProjectsPage && handleLinkClick(e, 'skills')} 
+            className={`transition ${isProjectsPage ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer'}`}
+          >
+            Skills
+          </a>
+          <a 
+            href="#experience" 
+            onClick={(e) => !isProjectsPage && handleLinkClick(e, 'experience')} 
+            className={`transition ${isProjectsPage ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer'}`}
+          >
+            Experiences
+          </a>
         </div>
 
         {/* Desktop Contact Me Button */}
         <a 
           href="#footer"
-          onClick={(e) => handleLinkClick(e, 'footer')}
-          className="hidden md:block bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition cursor-pointer"
+          onClick={(e) => !isProjectsPage && handleLinkClick(e, 'footer')}
+          className={`hidden md:block px-6 py-2 rounded-full transition ${isProjectsPage ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-purple-600 text-white hover:bg-purple-700 cursor-pointer'}`}
         >
           Contact Me
         </a>
@@ -70,42 +110,42 @@ function Navbar() {
             <a 
               href="#home" 
               onClick={(e) => handleLinkClick(e, 'home')}
-              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2 cursor-pointer"
+              className={`block transition py-2 ${isProjectsPage ? 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer' : 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer'}`}
             >
               Home
             </a>
             <a 
               href="#projects" 
-              onClick={(e) => handleLinkClick(e, 'projects')}
-              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2 cursor-pointer"
+              onClick={(e) => !isProjectsPage && handleLinkClick(e, 'projects')}
+              className={`block transition py-2 ${isProjectsPage ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer'}`}
             >
               Projects
             </a>
             <a 
               href="#about" 
-              onClick={(e) => handleLinkClick(e, 'about')}
-              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2 cursor-pointer"
+              onClick={(e) => !isProjectsPage && handleLinkClick(e, 'about')}
+              className={`block transition py-2 ${isProjectsPage ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer'}`}
             >
               About Me
             </a>
             <a 
               href="#experience" 
-              onClick={(e) => handleLinkClick(e, 'experience')}
-              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2 cursor-pointer"
+              onClick={(e) => !isProjectsPage && handleLinkClick(e, 'experience')}
+              className={`block transition py-2 ${isProjectsPage ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer'}`}
             >
               Experiences
             </a>
             <a 
               href="#skills" 
-              onClick={(e) => handleLinkClick(e, 'skills')}
-              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2 cursor-pointer"
+              onClick={(e) => !isProjectsPage && handleLinkClick(e, 'skills')}
+              className={`block transition py-2 ${isProjectsPage ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer'}`}
             >
               Skills
             </a>
             <a 
               href="#footer"
-              onClick={(e) => handleLinkClick(e, 'footer')}
-              className="block w-full bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition text-center cursor-pointer"
+              onClick={(e) => !isProjectsPage && handleLinkClick(e, 'footer')}
+              className={`block w-full px-6 py-2 rounded-full transition text-center ${isProjectsPage ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-purple-600 text-white hover:bg-purple-700 cursor-pointer'}`}
             >
               Contact Me
             </a>
