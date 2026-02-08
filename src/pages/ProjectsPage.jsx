@@ -43,8 +43,7 @@ function ProjectsPage() {
               Projects
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              I've built cool apps and websites using anything from HTML to React. 
-              Here are some of my favorite projects over the course of my journey.
+              Designing intuitive interfaces. Coding responsive experiences. Exploring the intersection of UX/UI Design and Frontend Development.
             </p>
             <Link 
               to="/"
@@ -56,10 +55,10 @@ function ProjectsPage() {
 
           {/* Design Projects Section */}
           <div className="mb-12 flex items-center gap-4">
-            <h2 className="text-2xl md:text-3xl font-normal text-gray-900">
-              UX/UI <span className="text-purple-600">Project</span>
+            <h2 className="text-lg md:text-2xl lg:text-3xl font-medium text-gray-900">
+              <span className="text-purple-600">UX/UI</span> Project
             </h2>
-            <div className="flex-1 h-px bg-purple-300"></div>
+            <div className="flex-1 h-0.5 bg-gradient-to-r from-purple-400 to-purple-600"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-20">
@@ -85,10 +84,10 @@ function ProjectsPage() {
 
           {/* Development Projects Section */}
           <div className="mb-12 flex items-center gap-4">
-            <h2 className="text-2xl md:text-3xl font-normal text-gray-900">
-              <span className="text-purple-600">Development Project</span>
+            <h2 className="text-lg md:text-2xl lg:text-3xl font-medium text-gray-900">
+              <span className="text-purple-600">Development</span> Project
             </h2>
-            <div className="flex-1 h-px bg-purple-300"></div>
+            <div className="flex-1 h-0.5 bg-gradient-to-r from-purple-400 to-purple-600"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

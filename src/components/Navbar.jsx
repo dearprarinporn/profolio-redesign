@@ -21,8 +21,16 @@ function Navbar() {
     e.preventDefault()
     setIsMobileMenuOpen(false)
     
-    if (isProjectsPage && targetId === 'home') {
-      navigate('/')
+    if (isProjectsPage) {
+      if (targetId === 'home') {
+        navigate('/')
+      } else if (targetId === 'footer') {
+        // Scroll to footer on projects page
+        const element = document.getElementById(targetId)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }
       return
     }
     
@@ -53,7 +61,7 @@ function Navbar() {
             onClick={(e) => !isProjectsPage && handleLinkClick(e, 'projects')} 
             className={`transition ${isProjectsPage ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer'}`}
           >
-            Projects
+            Project
           </a>
           <a 
             href="#about" 
@@ -67,22 +75,22 @@ function Navbar() {
             onClick={(e) => !isProjectsPage && handleLinkClick(e, 'skills')} 
             className={`transition ${isProjectsPage ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer'}`}
           >
-            Skills
+            Skill
           </a>
           <a 
             href="#experience" 
             onClick={(e) => !isProjectsPage && handleLinkClick(e, 'experience')} 
             className={`transition ${isProjectsPage ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer'}`}
           >
-            Experiences
+            Experience
           </a>
         </div>
 
         {/* Desktop Contact Me Button */}
         <a 
           href="#footer"
-          onClick={(e) => !isProjectsPage && handleLinkClick(e, 'footer')}
-          className={`hidden md:block px-6 py-2 rounded-full transition ${isProjectsPage ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-purple-600 text-white hover:bg-purple-700 cursor-pointer'}`}
+          onClick={(e) => handleLinkClick(e, 'footer')}
+          className="hidden md:block bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition cursor-pointer"
         >
           Contact Me
         </a>
@@ -119,7 +127,7 @@ function Navbar() {
               onClick={(e) => !isProjectsPage && handleLinkClick(e, 'projects')}
               className={`block transition py-2 ${isProjectsPage ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer'}`}
             >
-              Projects
+              Project
             </a>
             <a 
               href="#about" 
@@ -133,19 +141,19 @@ function Navbar() {
               onClick={(e) => !isProjectsPage && handleLinkClick(e, 'experience')}
               className={`block transition py-2 ${isProjectsPage ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer'}`}
             >
-              Experiences
+              Experience
             </a>
             <a 
               href="#skills" 
               onClick={(e) => !isProjectsPage && handleLinkClick(e, 'skills')}
               className={`block transition py-2 ${isProjectsPage ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:text-[#8B5CF6] cursor-pointer'}`}
             >
-              Skills
+              Skill
             </a>
             <a 
               href="#footer"
-              onClick={(e) => !isProjectsPage && handleLinkClick(e, 'footer')}
-              className={`block w-full px-6 py-2 rounded-full transition text-center ${isProjectsPage ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-purple-600 text-white hover:bg-purple-700 cursor-pointer'}`}
+              onClick={(e) => handleLinkClick(e, 'footer')}
+              className="block w-full bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition text-center cursor-pointer"
             >
               Contact Me
             </a>

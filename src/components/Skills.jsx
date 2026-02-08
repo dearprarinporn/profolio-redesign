@@ -66,7 +66,7 @@ function Skills() {
           {/* 1. User Experience Section */}
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-4 mb-6 w-full justify-center md:justify-start">
-              <h3 className="text-xl md:text-2xl font-medium text-gray-900 whitespace-nowrap">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-medium text-gray-900">
                 <span className="text-purple-600">UX/UI</span> Skill 
               </h3>
               <div className="flex-1 h-0.5 bg-gradient-to-r from-purple-400 to-purple-600"></div>
@@ -86,7 +86,7 @@ function Skills() {
           {/* 2. Development Skill Section */}
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-4 mb-6 w-full justify-center md:justify-start">
-              <h3 className="text-xl md:text-2xl font-medium text-gray-900 whitespace-nowrap">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-medium text-gray-900">
                 <span className="text-purple-600">Development</span> Skill
               </h3>
               <div className="flex-1 h-0.5 bg-gradient-to-r from-purple-400 to-purple-600"></div>

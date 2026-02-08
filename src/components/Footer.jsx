@@ -72,7 +72,7 @@ function Footer() {
                 </div>
                 <div className="flex-1 min-w-0">
                    <p className="font-bold text-gray-900 text-sm group-hover:text-purple-700 transition-colors truncate">Career Documents</p>
-                   <p className="text-[10px] text-gray-500 truncate">Resume, Transcript, Certs</p>
+                   <p className="text-[10px] text-gray-500 truncate">CV, Transcript, Certs</p>
                 </div>
                 <div className="text-gray-300 group-hover:text-purple-400 group-hover:translate-x-1 transition-all px-2">→</div>
               </a>

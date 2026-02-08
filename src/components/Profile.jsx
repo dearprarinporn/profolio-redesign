@@ -67,7 +67,7 @@ function About() {
           {/* --- Right Column: Info --- */}
           <div className="animate-fadeInRight order-2 lg:order-2">
             <div className="mb-2 md:mb-4">
-              <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-purple-600 tracking-wide mb-4 md:mb-4 whitespace-nowrap">
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-purple-600 tracking-wide mb-4 md:mb-4">
                 Prarinporn Chookaew
               </h1>
 
@@ -82,7 +82,7 @@ function About() {
               </div>
 
               <div className="pt-4 border-t border-gray-200">
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-normal leading-tight font-poppins whitespace-nowrap">
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-normal leading-tight font-poppins">
                   <span className="text-gray-900">{text}</span>
                   <span className="animate-pulse text-purple-600">|</span>
                 </h2>
@@ -123,7 +123,7 @@ function About() {
                     </svg>
                     <span className="font-medium">Prince of Songkla University</span>
                     <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
-                    <span className="font-medium">2018 - 2022</span>
+                    <span className="font-medium">2021 - 2025</span>
                   </div>
                 </div>
               </div>

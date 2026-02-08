@@ -31,7 +31,7 @@ function Projects() {
           {/* Header with line */}
           <div className="mb-12 md:mb-16">
             <div className="flex items-center gap-4 md:gap-6">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 whitespace-nowrap">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-gray-900">
                 Here are a few of my <span className="text-purple-600">favorite projects</span>.
               </h2>
               <div className="flex-1 h-0.5 bg-gradient-to-r from-purple-400 to-purple-600"></div>
