@@ -12,8 +12,14 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (e, targetId) => {
+    e.preventDefault()
     setIsMobileMenuOpen(false)
+    
+    const element = document.getElementById(targetId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
   }
 
   return (
@@ -25,17 +31,18 @@ function Navbar() {
         
         {/* Desktop Menu - Center */}
         <div className="hidden md:flex gap-8 absolute left-1/2 transform -translate-x-1/2">
-          <a href="#home" className="text-gray-700 hover:text-[#8B5CF6] transition">Home</a>
-          <a href="#projects" className="text-gray-700 hover:text-[#8B5CF6] transition">Projects</a>
-          <a href="#about" className="text-gray-700 hover:text-[#8B5CF6] transition">About Me</a>
-          <a href="#experience" className="text-gray-700 hover:text-[#8B5CF6] transition">Experiences</a>
-          <a href="#skills" className="text-gray-700 hover:text-[#8B5CF6] transition">Skills</a>
+          <a href="#home" onClick={(e) => handleLinkClick(e, 'home')} className="text-gray-700 hover:text-[#8B5CF6] transition cursor-pointer">Home</a>
+          <a href="#projects" onClick={(e) => handleLinkClick(e, 'projects')} className="text-gray-700 hover:text-[#8B5CF6] transition cursor-pointer">Projects</a>
+          <a href="#about" onClick={(e) => handleLinkClick(e, 'about')} className="text-gray-700 hover:text-[#8B5CF6] transition cursor-pointer">About Me</a>
+          <a href="#skills" onClick={(e) => handleLinkClick(e, 'skills')} className="text-gray-700 hover:text-[#8B5CF6] transition cursor-pointer">Skills</a>
+          <a href="#experience" onClick={(e) => handleLinkClick(e, 'experience')} className="text-gray-700 hover:text-[#8B5CF6] transition cursor-pointer">Experiences</a>
         </div>
 
         {/* Desktop Contact Me Button */}
         <a 
           href="#footer"
-          className="hidden md:block bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition"
+          onClick={(e) => handleLinkClick(e, 'footer')}
+          className="hidden md:block bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition cursor-pointer"
         >
           Contact Me
         </a>
@@ -62,43 +69,43 @@ function Navbar() {
           <div className="px-4 py-4 space-y-3">
             <a 
               href="#home" 
-              onClick={handleLinkClick}
-              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2"
+              onClick={(e) => handleLinkClick(e, 'home')}
+              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2 cursor-pointer"
             >
               Home
             </a>
             <a 
               href="#projects" 
-              onClick={handleLinkClick}
-              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2"
+              onClick={(e) => handleLinkClick(e, 'projects')}
+              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2 cursor-pointer"
             >
               Projects
             </a>
             <a 
               href="#about" 
-              onClick={handleLinkClick}
-              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2"
+              onClick={(e) => handleLinkClick(e, 'about')}
+              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2 cursor-pointer"
             >
               About Me
             </a>
             <a 
               href="#experience" 
-              onClick={handleLinkClick}
-              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2"
+              onClick={(e) => handleLinkClick(e, 'experience')}
+              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2 cursor-pointer"
             >
               Experiences
             </a>
             <a 
               href="#skills" 
-              onClick={handleLinkClick}
-              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2"
+              onClick={(e) => handleLinkClick(e, 'skills')}
+              className="block text-gray-700 hover:text-[#8B5CF6] transition py-2 cursor-pointer"
             >
               Skills
             </a>
             <a 
               href="#footer"
-              onClick={handleLinkClick}
-              className="block w-full bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition text-center"
+              onClick={(e) => handleLinkClick(e, 'footer')}
+              className="block w-full bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition text-center cursor-pointer"
             >
               Contact Me
             </a>
