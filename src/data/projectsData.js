@@ -11,6 +11,8 @@ import W2 from '../assets/W2.png'
 import W3 from '../assets/W3.png'
 import W4 from '../assets/W4.png'
 import BondPF from '../assets/BondPF.jpg'
+import P1 from '../assets/P1.jpg'
+import P2 from '../assets/P2.jpg'
 
 
 
@@ -134,17 +136,13 @@ export const projectsData = [
   type: 'development',
   githubUrl: 'https://github.com/dearprarinporn/profolio-redesign',
   image: PortPF,
-  tags: ['React', 'Tailwind CSS']
+  tags: ['React', 'Tailwind CSS'],
+  additionalImages: [
+      P1,
+      P2,
+  ]
   },
-  // {
-  // id: 9,
-  // title: 'New Project',
-  // year: '2025',
-  // type: 'design',
-  // status: 'in-progress',  
-  // image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
-  // tags: ['React', 'UI/UX']
-  // },
+
   {
     id: 7,
     title: 'Bond Management',
@@ -160,3 +158,13 @@ export const projectsData = [
     ]
   },
 ]
+
+ // {
+  // id: 9,
+  // title: 'New Project',
+  // year: '2025',
+  // type: 'design',
+  // status: 'in-progress',  
+  // image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
+  // tags: ['React', 'UI/UX']
+  // },
