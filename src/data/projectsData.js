@@ -13,6 +13,8 @@ import W4 from '../assets/W4.png'
 import BondPF from '../assets/BondPF.jpg'
 import P1 from '../assets/P1.jpg'
 import P2 from '../assets/P2.jpg'
+import P3 from '../assets/P3.jpg'
+import P4 from '../assets/P4.jpg'
 
 
 
@@ -140,6 +142,8 @@ export const projectsData = [
   additionalImages: [
       P1,
       P2,
+      P3,
+      P4
   ]
   },
 
