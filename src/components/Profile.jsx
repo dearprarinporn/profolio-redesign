@@ -43,7 +43,7 @@ function About() {
             <span className="text-purple-600">Who is</span>  Prarinporn? 
           </h2>
           <p className="text-gray-500 font-light text-sm md:text-base">
-            A brief look into my journey and educational background.
+            A brief look into my educational background.
           </p>
         </div>
 
