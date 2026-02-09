@@ -142,12 +142,8 @@ function Footer() {
           <div className="border-t border-gray-200 my-8"></div>
 
           {/* Bottom Section */}
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-sm text-gray-500">
             <p>© 2025 Prarinporn Chookaew. All rights reserved.</p>
-            <div className="flex gap-6">
-              <button className="hover:text-purple-600 transition">Privacy Policy</button>
-              <button className="hover:text-purple-600 transition">Terms of Service</button>
-            </div>
           </div>
         </div>
       </div>

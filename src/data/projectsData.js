@@ -44,6 +44,27 @@ export const projectsData = [
   },
   {
     id: 2,
+    title: 'Rapid Work',
+    year: '2025',
+    type: 'design',
+    image: RapPF,
+    tags: ['Web App', 'UI Design', 'Productivity'],
+    additionalImages: [
+      `${CLOUDINARY_URL}/MacBook_Pro_16__-_112_x5qcnj.webp`,
+      `${CLOUDINARY_URL}/MacBook_Pro_16__-_113_kgx9yo.webp`,
+      `${CLOUDINARY_URL}/MacBook_Pro_16__-_117_bcpa3h.webp`,
+      `${CLOUDINARY_URL}/MacBook_Pro_16__-_118_zdlm3s.webp`,
+      `${CLOUDINARY_URL}/Frame_1597885124_yc7zzu.webp`,
+      `${CLOUDINARY_URL}/MacBook_Pro_16__-_119_ttlmel.webp`,
+      `${CLOUDINARY_URL}/MacBook_Pro_16__-_120_rxnoqg.webp`,
+      `${CLOUDINARY_URL}/MacBook_Pro_16__-_121_cvuyai.webp`,
+      `${CLOUDINARY_URL}/MacBook_Pro_16__-_100_dmnvbn.webp`,
+      `${CLOUDINARY_URL}/MacBook_Pro_16__-_122_wqineg.webp`,
+      `${CLOUDINARY_URL}/MacBook_Pro_16__-_123_mdy7mb.webp`,
+    ]
+  },
+  {
+    id: 3,
     title: 'RythmWave',
     year: '2024',
     type: 'design',
@@ -64,27 +85,7 @@ export const projectsData = [
       `${CLOUDINARY_URL}/MacBook_Pro_16__-_116_v1gdvn.webp`,
       `${CLOUDINARY_URL}/MacBook_Pro_16__-_117_kpeqja.webp`,
       `${CLOUDINARY_URL}/Frame_1597885108_sdbz7j.webp`,
-    ]
-  },
-  {
-    id: 3,
-    title: 'Rapid Work',
-    year: '2025',
-    type: 'design',
-    image: RapPF,
-    tags: ['Web App', 'UI Design', 'Productivity'],
-    additionalImages: [
-      `${CLOUDINARY_URL}/MacBook_Pro_16__-_112_x5qcnj.webp`,
-      `${CLOUDINARY_URL}/MacBook_Pro_16__-_113_kgx9yo.webp`,
-      `${CLOUDINARY_URL}/MacBook_Pro_16__-_117_bcpa3h.webp`,
-      `${CLOUDINARY_URL}/MacBook_Pro_16__-_118_zdlm3s.webp`,
-      `${CLOUDINARY_URL}/Frame_1597885124_yc7zzu.webp`,
-      `${CLOUDINARY_URL}/MacBook_Pro_16__-_119_ttlmel.webp`,
-      `${CLOUDINARY_URL}/MacBook_Pro_16__-_120_rxnoqg.webp`,
-      `${CLOUDINARY_URL}/MacBook_Pro_16__-_121_cvuyai.webp`,
-      `${CLOUDINARY_URL}/MacBook_Pro_16__-_100_dmnvbn.webp`,
-      `${CLOUDINARY_URL}/MacBook_Pro_16__-_122_wqineg.webp`,
-      `${CLOUDINARY_URL}/MacBook_Pro_16__-_123_mdy7mb.webp`,
+    
       
     ]
   },
