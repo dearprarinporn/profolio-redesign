@@ -6,7 +6,11 @@ import PeepPF from '../assets/PeepPF.jpg'
 import RapPF from '../assets/RapPF.jpg'
 import LanPF from '../assets/LanPF.jpg'
 import PortPF from '../assets/PortPF.jpg'
-
+import W1 from '../assets/W1.png'
+import W2 from '../assets/W2.png'
+import W3 from '../assets/W3.png'
+import W4 from '../assets/W4.png'
+import BondPF from '../assets/BondPF.jpg'
 
 
 
@@ -152,14 +156,17 @@ export const projectsData = [
   // },
   {
     id: 10,
-    title: 'Bank Website Dev',
-    year: '2023',
+    title: 'Bond Management',
+    year: '2024',
     type: 'development',
     githubUrl: 'https://github.com/yourusername/bank-website',
-    image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
+    image: BondPF,
     tags: ['Angular', 'Typescript'],
     additionalImages: [
-      `${CLOUDINARY_URL}/Desktop_-_1_czapv0.webp`,
+      W1,
+      W2,
+      W3,
+      W4,
     ]
   },
 ]
