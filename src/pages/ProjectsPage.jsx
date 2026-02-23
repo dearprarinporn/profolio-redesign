@@ -30,6 +30,7 @@ function ProjectsPage() {
   // Separate projects by type
   const designProjects = projectsData.filter(project => project.type === 'design')
   const devProjects = projectsData.filter(project => project.type === 'development')
+  const graphicProjects = projectsData.filter(project => project.type === 'graphic')
 
   return (
     <div className="bg-white text-gray-900 min-h-screen">
@@ -90,7 +91,7 @@ function ProjectsPage() {
             <div className="flex-1 h-0.5 bg-gradient-to-r from-purple-400 to-purple-600"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-20">
             {devProjects.map((project, index) => (
               <div 
                 key={project.id} 
@@ -110,6 +111,37 @@ function ProjectsPage() {
               </div>
             ))}
           </div>
+
+          {/* Graphic Projects Section */}
+          <div className="mb-12 flex items-center gap-4">
+            <h2 className="text-lg md:text-2xl lg:text-3xl font-medium text-gray-900">
+              <span className="text-purple-600">Graphic</span> Project
+            </h2>
+            <div className="flex-1 h-0.5 bg-gradient-to-r from-purple-400 to-purple-600"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-20">
+            {graphicProjects.map((project, index) => (
+              <div 
+                key={project.id} 
+                className="animate-fadeInUp"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <ProjectCard 
+                  title={project.title} 
+                  year={project.year}
+                  image={project.image}
+                  tags={project.tags}
+                  type={project.type}
+                  status={project.status}
+                  githubUrl={project.githubUrl}
+                  onClick={() => handleProjectClick(project)}
+                />
+              </div>
+            ))}
+          </div>
+
+          
         </div>
       </section>
 

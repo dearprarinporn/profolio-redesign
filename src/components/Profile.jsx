@@ -8,7 +8,7 @@ function About() {
   const [loopNum, setLoopNum] = useState(0)
   const [typingSpeed, setTypingSpeed] = useState(150)
 
-  const words = ['UX/UI Designer']
+  const words = ['UX/UI Designer','Frontend Developer']
 
   useEffect(() => {
     const handleType = () => {

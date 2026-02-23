@@ -15,6 +15,10 @@ import P1 from '../assets/P1.jpg'
 import P2 from '../assets/P2.jpg'
 import P3 from '../assets/P3.jpg'
 import P4 from '../assets/P4.jpg'
+import FL01 from '../assets/FL01.png'
+import FL02 from '../assets/FL02.png'
+import FL03 from '../assets/FL03.png'
+import FL04 from '../assets/FL04.png'
 
 
 
@@ -159,6 +163,19 @@ export const projectsData = [
       W2,
       W3,
       W4,
+    ]
+  },
+  {
+    id: 8,
+    title: 'Poster',
+    year: '2026',
+    type: 'graphic',
+    image: FL04,
+    tags: ['Poster'],
+    additionalImages: [
+      FL01,
+      FL02,
+      FL03
     ]
   },
 ]
