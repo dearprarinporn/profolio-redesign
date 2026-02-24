@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import LazyImage from './LazyImage'
 
 
 
@@ -122,10 +121,11 @@ function ProjectModal({ isOpen, onClose, project }) {
                 key={index}
                 ref={index === designSystemIndex ? designSystemRef : null}
               >
-                <LazyImage
+                <img
                   src={img}
                   alt={`${project.title} screenshot ${index + 1}`}
                   className="w-full h-auto"
+                  loading="eager"
                 />
               </div>
             ))}
