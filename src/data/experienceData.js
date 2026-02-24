@@ -8,6 +8,9 @@ import W4 from '../assets/W4.png'
 import FL01 from '../assets/FL01.png'
 import FL02 from '../assets/FL02.png'
 import FL03 from '../assets/FL03.png'
+import FL08 from '../assets/FL08.png'
+import FL06 from '../assets/FL06.png'
+import FL07 from '../assets/FL07.png'
 
 
 const CLOUDINARY_URL = 'https://res.cloudinary.com/dl1m5dwmb/image/upload/v1768671127'
@@ -117,7 +120,10 @@ export const experienceData = [
       additionalImages: [
         FL01,
         FL02,
-        FL03
+        FL06,
+        FL07,
+        FL08,
+        FL03,
       ]
     }
   }

@@ -1,5 +1,3 @@
-// CDN URLs from Cloudinary
-const CLOUDINARY_URL = 'https://res.cloudinary.com/dl1m5dwmb/image/upload/v1768671127'
 import uniqPF from '../assets/uniqPF.jpg'
 import RhyPF from '../assets/RhyPF.jpg'
 import PeepPF from '../assets/PeepPF.jpg'
@@ -19,6 +17,14 @@ import FL01 from '../assets/FL01.png'
 import FL02 from '../assets/FL02.png'
 import FL03 from '../assets/FL03.png'
 import FL04 from '../assets/FL04.png'
+import FL08 from '../assets/FL08.png'
+import FL06 from '../assets/FL06.png'
+import FL07 from '../assets/FL07.png'
+import DeliPF from '../assets/DeliPF.jpg'
+
+
+// CDN URLs from Cloudinary
+const CLOUDINARY_URL = 'https://res.cloudinary.com/dl1m5dwmb/image/upload/v1768671127'
 
 
 
@@ -173,19 +179,22 @@ export const projectsData = [
     image: FL04,
     tags: ['Poster'],
     additionalImages: [
-      FL01,
-      FL02,
-      FL03
+        FL01,
+        FL02,
+        FL06,
+        FL07,
+        FL08,
+        FL03,
     ]
+  },
+  {
+  id: 9,
+  title: 'Delivery App',
+  year: '2025',
+  type: 'design',
+  status: 'in-progress',  
+  image: DeliPF,
+  tags: ['UI Design']
   },
 ]
 
- // {
-  // id: 9,
-  // title: 'New Project',
-  // year: '2025',
-  // type: 'design',
-  // status: 'in-progress',  
-  // image: `${CLOUDINARY_URL}/1_krv2cm.webp`,
-  // tags: ['React', 'UI/UX']
-  // },

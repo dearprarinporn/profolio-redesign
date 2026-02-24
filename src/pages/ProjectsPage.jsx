@@ -120,7 +120,7 @@ function ProjectsPage() {
             <div className="flex-1 h-0.5 bg-gradient-to-r from-purple-400 to-purple-600"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {graphicProjects.map((project, index) => (
               <div 
                 key={project.id} 
@@ -140,8 +140,6 @@ function ProjectsPage() {
               </div>
             ))}
           </div>
-
-          
         </div>
       </section>
 
