@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import profileNew from '../assets/ProfileNew.png'
+import profileNew from '../assets/psu.png'
 import psuLogo from '../assets/psuLogo.png'
 
 function About() {
