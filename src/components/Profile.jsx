@@ -80,17 +80,10 @@ function About() {
                   <span className="text-gray-500 font-light">Designing intuitive experiences that users actually enjoy.</span>
                 </p>
               </div>
-
-              <div className="pt-4 border-t border-gray-200">
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-normal leading-tight font-poppins">
-                  <span className="text-gray-900">{text}</span>
-                  <span className="animate-pulse text-purple-600">|</span>
-                </h2>
-              </div>
             </div>
 
             {/* Education Card */}
-            <div className="bg-white border border-gray-100 rounded-3xl px-5 py-4 md:px-6 md:py-5 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_25px_rgba(0,0,0,0.12)] transition-all duration-300">
+            <div className="bg-white border border-gray-100 rounded-3xl px-5 py-4 md:px-6 md:py-5 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_25px_rgba(0,0,0,0.12)] transition-all duration-300 mb-4 md:mb-6">
               <div className="flex flex-col sm:flex-row gap-6 md:gap-8 items-center">
                 
                 {/* Logo */}
@@ -127,6 +120,15 @@ function About() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Target Position */}
+            <div >
+              <h2 className="text-xl md:text-2xl lg:text-3xl leading-tight font-poppins">
+                <span className="text-gray-900 font-medium">Target Position: </span>
+                <span className="text-purple-600 font-semibold">{text}</span>
+                <span className="animate-pulse text-purple-600">|</span>
+              </h2>
             </div>
           </div>
 
