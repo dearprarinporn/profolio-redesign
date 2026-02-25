@@ -1,4 +1,5 @@
 import React from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 // นำเข้ารูปภาพโลโก้ตาม Path เดิมของคุณ
 import figmaLogo from '../assets/figmaLogo.jpeg';
@@ -9,6 +10,10 @@ import figjamLogo from '../assets/figjamLogo.webp';
 import vsLogo from '../assets/vsLogo.svg.png';
 
 function Skills() {
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 })
+  const [toolsRef, toolsVisible] = useScrollAnimation({ threshold: 0.1 })
+  const [skillsRef, skillsVisible] = useScrollAnimation({ threshold: 0.1 })
+  
   const designTools = [
     { name: 'FIGMA', logo: figmaLogo },
     { name: 'FRAMER', logo: framerLogo },
@@ -35,7 +40,7 @@ function Skills() {
       <div className="max-w-6xl mx-auto">
         
         {/* 🟢 Header: คงเดิม */}
-        <div className="text-center mb-12 md:mb-16">
+        <div ref={headerRef} className={`text-center mb-12 md:mb-16 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-3">
             Skills & <span className="text-purple-600">Tools</span>
           </h2>
@@ -45,7 +50,7 @@ function Skills() {
         </div>
 
         {/* 🟢 Design Tools Scroll: คงเดิม */}
-        <div className="mb-20 overflow-hidden relative">
+        <div ref={toolsRef} className={`mb-20 overflow-hidden relative transition-all duration-1000 ${toolsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div 
             className="absolute inset-0 z-10 pointer-events-none"
             style={{ background: 'linear-gradient(to right, white 0%, transparent 15%, transparent 85%, white 100%)' }}
@@ -61,7 +66,7 @@ function Skills() {
         </div>
 
         {/* 🟢 ปรับปรุง: แยกฝั่งซ้าย-ขวา และลดขนาด Capsule */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
+        <div ref={skillsRef} className={`grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start transition-all duration-1000 delay-200 ${skillsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           
           {/* 1. User Experience Section */}
           <div className="flex flex-col items-center md:items-start">

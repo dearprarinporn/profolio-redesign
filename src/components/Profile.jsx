@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import profileNew from '../assets/psu.png'
 import psuLogo from '../assets/psuLogo.png'
 
@@ -7,6 +8,8 @@ function About() {
   const [isDeleting, setIsDeleting] = useState(false)
   const [loopNum, setLoopNum] = useState(0)
   const [typingSpeed, setTypingSpeed] = useState(150)
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 })
+  const [contentRef, contentVisible] = useScrollAnimation({ threshold: 0.1 })
 
   const words = ['UX/UI Designer','Frontend Developer']
 
@@ -38,7 +41,7 @@ function About() {
   return (
     <section id="about" className="py-8 md:py-12 px-4 md:px-8 bg-white relative overflow-hidden">
       
-      <div className="text-center mb-8 md:mb-12">
+      <div ref={headerRef} className={`text-center mb-8 md:mb-12 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-3">
             <span className="text-purple-600">Who is</span>  Prarinporn? 
           </h2>
@@ -50,8 +53,8 @@ function About() {
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-purple-100/30 rounded-full blur-3xl -z-10"></div>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center -ml-0 lg:-ml-16">
+      <div ref={contentRef} className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center -ml-0 lg:-ml-16 transition-all duration-1000 ${contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           
           {/* --- Left Column: Image --- */}
           <div className="flex justify-center lg:justify-start animate-fadeInLeft order-1 lg:order-1">

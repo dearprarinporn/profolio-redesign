@@ -44,7 +44,7 @@ function Hero() {
           </p>
 
           {/* Main Headline */}
-          <h1 className={`text-3xl md:text-5xl lg:text-6xl font-semibold mb-10 leading-tight transition-all duration-700 delay-200 ${
+          <h1 className={`text-2xl md:text-4xl lg:text-5xl font-semibold mb-10 leading-tight transition-all duration-700 delay-200 ${
             showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}>
             <div className="mb-4">I enjoy <span className="text-purple-600">designing</span> and</div>

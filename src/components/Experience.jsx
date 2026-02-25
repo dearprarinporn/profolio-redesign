@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { experienceData } from '../data/experienceData'
 import certificateOfEmployment from '../assets/Prarinporn_Chookaew_ Certificate of Employment.pdf'
 import ProjectModal from './ProjectModal'
@@ -6,6 +7,8 @@ import ProjectModal from './ProjectModal'
 function Experience() {
   const [selectedProject, setSelectedProject] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 })
+  const [cardsRef, cardsVisible] = useScrollAnimation({ threshold: 0.1 })
 
   const handleDownload = (fileUrl, fileName) => {
     const link = document.createElement('a')
@@ -32,8 +35,8 @@ function Experience() {
 
   return (
     <section id="experience" className="py-16 md:py-24 px-4 md:px-8 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 md:mb-16">
+      <div className="max-w-3xl mx-auto">
+        <div ref={headerRef} className={`text-center mb-12 md:mb-16 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-3">
             My <span className="text-purple-600">Work Experience</span>
           </h2>
@@ -42,8 +45,8 @@ function Experience() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-16">
-          {experienceData.filter(exp => !exp.isFreelance).map((exp, index) => (
+        <div ref={cardsRef} className={`grid grid-cols-1 md:grid-cols-2 gap-6 gap-y-16 transition-all duration-1000 ${cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          {experienceData.map((exp, index) => (
             <div
               key={exp.id}
               className="relative animate-fadeInUp"
@@ -83,6 +86,13 @@ function Experience() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                         Internship
+                      </span>
+                    ) : exp.type === 'freelance' ? (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-gradient-to-r from-green-50 to-emerald-50 text-green-700 rounded-full text-xs font-semibold border border-green-200">
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Available
                       </span>
                     ) : (
                       <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-gradient-to-r from-purple-50 to-purple-100 text-purple-700 rounded-full text-xs font-semibold border border-purple-200">
@@ -146,79 +156,8 @@ function Experience() {
           ))}
         </div>
 
-        {/* Freelance Card - Horizontal (from data) */}
-        {experienceData.filter(exp => exp.isFreelance).map((exp) => (
-          <div key={exp.id} className="mt-8 animate-fadeInUp flex justify-center">
-            <div className="bg-white border border-gray-100/80 rounded-[2rem] p-6 md:p-8 shadow-[0_0_20px_rgba(0,0,0,0.08)] hover:shadow-[0_0_25px_rgba(0,0,0,0.12)] hover:border-purple-100 transition-all duration-300 max-w-4xl w-full">
-              <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
-                
-                {/* Logo */}
-                <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-3xl p-4 border border-gray-100 shadow-lg flex-shrink-0 flex items-center justify-center">
-                  <span className="text-4xl">💼</span>
-                </div>
-
-                {/* Content */}
-                <div className="flex-1 text-center md:text-left">
-                  <div className="flex flex-col md:flex-row md:items-center gap-3 mb-3">
-                    <h3 className="text-1xl md:text-2xl font-bold text-gray-900">
-                      {exp.position}
-                    </h3>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-gradient-to-r from-green-50 to-emerald-50 text-green-700 rounded-full text-xs font-semibold border border-green-200 mx-auto md:mx-0">
-                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      Available
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col md:flex-row md:items-center gap-3 text-sm text-gray-600 mb-4">
-                    <div className="flex items-center justify-center md:justify-start gap-2">
-                      <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                      <span className="font-medium">{exp.company}</span>
-                    </div>
-                    <span className="hidden md:inline text-gray-400">•</span>
-                    <div className="flex items-center justify-center md:justify-start gap-2">
-                      <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                      <span className="font-medium">{exp.period}</span>
-                    </div>
-                  </div>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap justify-center md:justify-start gap-2">
-                    {exp.tags.map((tag, i) => (
-                      <span key={i} className="px-3 py-1.5 bg-gray-50 text-gray-500 rounded-lg text-xs font-medium border border-gray-100/50 hover:bg-purple-50 hover:text-purple-600 hover:border-purple-100/50 transition-all duration-300">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* View Project Button - Right Side */}
-                {exp.projectData && (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      handleProjectClick(exp)
-                    }}
-                    className="flex-shrink-0 w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center -rotate-45 hover:rotate-0 hover:bg-purple-500 hover:border-purple-500 transition-all duration-500 group/btn"
-                  >
-                    <svg className="w-5 h-5 text-gray-400 group-hover/btn:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </button>
-                )}
-
-              </div>
-            </div>
-          </div>
-        ))}
-
-        {/* Download Button */}
-        <div className="flex justify-center mt-16 animate-fadeInUp">
+        {/* Download Button - Hidden */}
+        {/* <div className="flex justify-center mt-16 animate-fadeInUp">
           <button
             onClick={() => handleDownload(certificateOfEmployment, 'Prarinporn_Chookaew_Certificates.pdf')}
             className="px-10 py-4 bg-gray-100 text-gray-700 rounded-full font-medium hover:bg-gray-200 transition-all duration-300 tracking-wider text-base flex items-center gap-2"
@@ -228,7 +167,7 @@ function Experience() {
             </svg>
             Download Certificates
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* Project Modal */}
