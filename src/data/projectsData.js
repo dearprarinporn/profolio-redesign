@@ -21,6 +21,12 @@ import FL08 from '../assets/FL08.png'
 import FL06 from '../assets/FL06.png'
 import FL07 from '../assets/FL07.png'
 import DeliPF from '../assets/DeliPF.jpg'
+import Deli01 from '../assets/Deli01.png'
+import Deli02 from '../assets/Deli02.png'
+import Deli03 from '../assets/Deli03.png'
+import Deli04 from '../assets/Deli04.png'
+import Deli05 from '../assets/Deli05.png'
+import KFCRe from '../assets/KFCRe.jpg'
 
 
 // CDN URLs from Cloudinary
@@ -189,12 +195,35 @@ export const projectsData = [
   },
   {
   id: 9,
-  title: 'Delivery App',
-  year: '2025',
+  title: 'Munch',
+  year: '2026',
+  type: 'design',
+  image: DeliPF,
+  tags: ['UI Design','Design System'],
+  additionalImages: [
+        Deli01,
+        Deli02,
+        Deli03,
+        Deli04,
+        Deli05,
+    ]
+  },
+  {
+  id: 10,
+  title: 'Redesign KFC App',
+  year: '2026',
   type: 'design',
   status: 'in-progress',  
-  image: DeliPF,
-  tags: ['UI Design']
+  image: KFCRe,
+  tags: ['Redesign','Test'],
+  additionalImages: [
+        Deli01,
+        Deli02,
+        Deli03,
+        Deli04,
+        Deli05,
+    ]
   },
+  
 ]
 
