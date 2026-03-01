@@ -27,6 +27,7 @@ import Deli03 from '../assets/Deli03.png'
 import Deli04 from '../assets/Deli04.png'
 import Deli05 from '../assets/Deli05.png'
 import KFCRe from '../assets/KFCRe.jpg'
+import Uniq01 from '../assets/Uniq01.png'
 
 
 // CDN URLs from Cloudinary
@@ -57,7 +58,7 @@ export const projectsData = [
       `${CLOUDINARY_URL}/designSystem_presw2.webp`,
       `${CLOUDINARY_URL}/feedback_ldercp.webp`,
       `${CLOUDINARY_URL}/chatFeature_lyb5rg.webp`,
-      `${CLOUDINARY_URL}/emergencyFeature_vmkqlc.webp`,
+      Uniq01,
       `${CLOUDINARY_URL}/allUniq_b1phvk.webp`,
       
     ]
@@ -138,14 +139,19 @@ export const projectsData = [
   },
   {
     id: 5,
-    title: 'Landing Page',
-    year: '2024',
-    type: 'design',
-    image: LanPF,
-    tags: ['Web Design', 'UI', 'Wireframe'],
-    additionalImages: [
-      `${CLOUDINARY_URL}/Desktop_-_1_czapv0.webp`,
+    title: 'Munch',
+  year: '2026',
+  type: 'design',
+  image: DeliPF,
+  tags: ['UI Design','Design System'],
+  additionalImages: [
+        Deli01,
+        Deli02,
+        Deli03,
+        Deli04,
+        Deli05,
     ]
+    
   },
   {
   id: 6,
@@ -195,17 +201,13 @@ export const projectsData = [
   },
   {
   id: 9,
-  title: 'Munch',
-  year: '2026',
+  title: 'Landing Page',
+  year: '2024',
   type: 'design',
-  image: DeliPF,
-  tags: ['UI Design','Design System'],
+  image: LanPF,
+  tags: ['Web Design', 'UI', 'Wireframe'],
   additionalImages: [
-        Deli01,
-        Deli02,
-        Deli03,
-        Deli04,
-        Deli05,
+      `${CLOUDINARY_URL}/Desktop_-_1_czapv0.webp`,
     ]
   },
   {
