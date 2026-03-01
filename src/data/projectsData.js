@@ -28,6 +28,7 @@ import Deli04 from '../assets/Deli04.png'
 import Deli05 from '../assets/Deli05.png'
 import KFCRe from '../assets/KFCRe.jpg'
 import Uniq01 from '../assets/Uniq01.png'
+import Uniq02 from '../assets/Uniq02.png'
 
 
 // CDN URLs from Cloudinary
@@ -59,6 +60,7 @@ export const projectsData = [
       `${CLOUDINARY_URL}/feedback_ldercp.webp`,
       `${CLOUDINARY_URL}/chatFeature_lyb5rg.webp`,
       Uniq01,
+      Uniq02,
       `${CLOUDINARY_URL}/allUniq_b1phvk.webp`,
       
     ]
