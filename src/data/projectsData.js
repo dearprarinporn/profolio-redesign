@@ -87,6 +87,23 @@ export const projectsData = [
     ]
   },
   {
+  id: 6,
+  title: 'Portfolio Website',
+  year: '2026',
+  type: 'development',
+  githubUrl: 'https://github.com/dearprarinporn/profolio-redesign',
+  image: PortPF,
+  tags: ['React', 'Tailwind CSS'],
+  additionalImages: [
+      P1,
+      P2,
+      P3,
+      P4
+  ]
+  },
+  
+
+  {
     id: 3,
     title: 'RythmWave',
     year: '2024',
@@ -155,21 +172,7 @@ export const projectsData = [
     ]
     
   },
-  {
-  id: 6,
-  title: 'Portfolio Website',
-  year: '2026',
-  type: 'development',
-  githubUrl: 'https://github.com/dearprarinporn/profolio-redesign',
-  image: PortPF,
-  tags: ['React', 'Tailwind CSS'],
-  additionalImages: [
-      P1,
-      P2,
-      P3,
-      P4
-  ]
-  },
+  
 
   {
     id: 7,
@@ -221,11 +224,19 @@ export const projectsData = [
   image: KFCRe,
   tags: ['Redesign','Test'],
   additionalImages: [
-        Deli01,
-        Deli02,
-        Deli03,
-        Deli04,
-        Deli05,
+        
+    ]
+  },
+  {
+  id: 11,
+  title: 'Munch Application',
+  year: '2026',
+  type: 'development',
+  status: 'in-progress',  
+  image: DeliPF,
+  tags: ['Mobile','Flutter','Dart'],
+  additionalImages: [
+ 
     ]
   },
   

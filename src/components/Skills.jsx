@@ -29,7 +29,7 @@ function Skills() {
   ];
 
   const devSkills = [
-    'React', 'Angular', 'JavaScript', 'TypeScript', 
+    'React', 'Angular', 'JavaScript', 'TypeScript', 'Flutter','Dart',
     'Python', 'PHP', 'C', 'HTML', 'CSS', 'MySQL', 'Robot Framework','Tailwind CSS'
   ];
 

@@ -110,7 +110,7 @@ export const experienceData = [
     status: 'current',
     order: 4,
     type: 'freelance',
-    tags: ["Graphic", "Web Development", "UI/UX Design", "Poster"],
+    tags: ["Graphic", "Web Development", "UI/UX Design"],
     image: null, // ใช้ emoji แทน
     isFreelance: true, // flag สำหรับแสดงแบบ horizontal card
     projectData: {
