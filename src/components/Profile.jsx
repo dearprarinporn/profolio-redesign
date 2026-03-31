@@ -11,7 +11,7 @@ function About() {
   const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 })
   const [contentRef, contentVisible] = useScrollAnimation({ threshold: 0.1 })
 
-  const words = ['UX/UI Designer','Frontend Developer','Programmer']
+  const words = ['UX/UI Designer','Frontend Developer']
 
   useEffect(() => {
     const handleType = () => {

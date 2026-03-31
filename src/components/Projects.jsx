@@ -53,6 +53,7 @@ function Projects() {
                   type={project.type}
                   status={project.status}
                   githubUrl={project.githubUrl}
+                  figmaUrl={project.figmaUrl}
                   onClick={() => handleProjectClick(project)}
                 />
               </div>

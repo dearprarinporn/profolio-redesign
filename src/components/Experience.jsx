@@ -143,7 +143,7 @@ function Experience() {
                         e.stopPropagation()
                         handleProjectClick(exp)
                       }}
-                      className="absolute bottom-6 right-6 w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center -rotate-45 hover:rotate-0 hover:bg-purple-500 hover:border-purple-500 transition-all duration-500 group/btn"
+                      className="absolute bottom-6 right-6 w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center -rotate-45 hover:rotate-0 hover:bg-purple-500 hover:border-purple-500 transition-all duration-500 group/btn z-20"
                     >
                       <svg className="w-5 h-5 text-gray-400 group-hover/btn:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />

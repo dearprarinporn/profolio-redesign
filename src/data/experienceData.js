@@ -87,6 +87,7 @@ export const experienceData = [
       id: 'rapid-project',
       title: 'RapidWork Project',
       year: '2025',
+      figmaUrl: 'https://www.figma.com/design/PCJbkOwHrK57fIIuG7Wdgz/Rapid-Tech-Projec---Prarinpornt?node-id=1-357125&t=jCYeqnSIGfmp8I1Z-1',
       additionalImages: [
         `${CLOUDINARY_URL}/MacBook_Pro_16__-_112_x5qcnj.webp`,
         `${CLOUDINARY_URL}/MacBook_Pro_16__-_113_kgx9yo.webp`,

@@ -77,6 +77,7 @@ function ProjectsPage() {
                   type={project.type}
                   status={project.status}
                   githubUrl={project.githubUrl}
+                  figmaUrl={project.figmaUrl}
                   onClick={() => handleProjectClick(project)}
                 />
               </div>
@@ -106,6 +107,7 @@ function ProjectsPage() {
                   type={project.type}
                   status={project.status}
                   githubUrl={project.githubUrl}
+                  figmaUrl={project.figmaUrl}
                   onClick={() => handleProjectClick(project)}
                 />
               </div>
@@ -135,6 +137,7 @@ function ProjectsPage() {
                   type={project.type}
                   status={project.status}
                   githubUrl={project.githubUrl}
+                  figmaUrl={project.figmaUrl}
                   onClick={() => handleProjectClick(project)}
                 />
               </div>
