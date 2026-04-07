@@ -20,6 +20,8 @@ import FL04 from '../assets/FL04.png'
 import FL08 from '../assets/FL08.png'
 import FL06 from '../assets/FL06.png'
 import FL07 from '../assets/FL07.png'
+import FL09 from '../assets/FL09.png'
+import FL10 from '../assets/FL10.png'
 import DeliPF from '../assets/DeliPF.jpg'
 import Deli01 from '../assets/Deli01.png'
 import Deli02 from '../assets/Deli02.png'
@@ -29,6 +31,12 @@ import Deli05 from '../assets/Deli05.png'
 import KFCRe from '../assets/KFCRe.jpg'
 import Uniq01 from '../assets/Uniq01.png'
 import Uniq02 from '../assets/Uniq02.png'
+import Munchv2 from '../assets/Munchv2.jpg'
+import m01 from '../assets/m01.png'
+import m02 from '../assets/m02.png'
+import m03 from '../assets/m03.png'
+import m04 from '../assets/m04.png'
+import m05 from '../assets/m05.png'
 
 
 // CDN URLs from Cloudinary
@@ -174,6 +182,26 @@ export const projectsData = [
     ]
     
   },
+  {
+    id: 12,
+    title: 'Munch Version 1.2',
+  year: '2026',
+  type: 'design',
+  image: Munchv2,
+  figmaUrl: 'https://www.figma.com/design/1aJn5t3GeAavRM5qkFz4Ea/Prarinporn-Chookaew---Design-Assignment?node-id=921-9818&t=r0vCMiFTMUXNQnGr-1',
+  tags: ['UI Design','Design System'],
+  additionalImages: [
+        m01,
+        m02,
+        m03,
+        Deli03,
+        Deli04,
+        Deli05,
+        m04,
+        m05
+    ]
+    
+  },
   
 
   {
@@ -192,7 +220,7 @@ export const projectsData = [
   },
   {
     id: 8,
-    title: 'Poster',
+    title: 'Infoghaphic',
     year: '2026',
     type: 'graphic',
     image: FL04,
@@ -203,7 +231,10 @@ export const projectsData = [
         FL06,
         FL07,
         FL08,
+        FL09,
+        FL10,
         FL03,
+        
     ]
   },
   {
@@ -217,18 +248,18 @@ export const projectsData = [
       `${CLOUDINARY_URL}/Desktop_-_1_czapv0.webp`,
     ]
   },
-  {
-  id: 10,
-  title: 'Redesign KFC App',
-  year: '2026',
-  type: 'design',
-  status: 'in-progress',  
-  image: KFCRe,
-  tags: ['Redesign','Test'],
-  additionalImages: [
+  // {
+  // id: 10,
+  // title: 'Redesign KFC App',
+  // year: '2026',
+  // type: 'design',
+  // status: 'in-progress',  
+  // image: KFCRe,
+  // tags: ['Redesign','Test'],
+  // additionalImages: [
         
-    ]
-  },
+  //   ]
+  // },
   {
   id: 11,
   title: 'Munch Application',
